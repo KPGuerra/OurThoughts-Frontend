@@ -2,11 +2,11 @@ import { combineReducers } from 'redux'
 
 const defaultState = {
     currentUser: null,
-    thoughtsArray: []
+    allThoughts: [],
+    fiveThoughts: []
 }
 
 function setUser(state = defaultState.currentUser, action) {
-    console.log("IN REDUCER", action.payload)
     switch (action.type) {
         case "SET_USER":
             return (action.payload)
@@ -17,7 +17,16 @@ function setUser(state = defaultState.currentUser, action) {
     }
 }
 
-function getThoughtsData(state = defaultState.thoughtsArray, action) {
+function getThoughtsData(state = defaultState.allThoughts, action) {
+    switch (action.type) {
+        case "ALL_THOUGHTS":
+            return (action.payload)
+        default:
+            return state
+    }
+}
+
+function getFiveThoughts(state = defaultState.fiveThoughts, action) {
     switch (action.type) {
         case "GET_THOUGHTS":
             return (action.payload)
@@ -28,7 +37,8 @@ function getThoughtsData(state = defaultState.thoughtsArray, action) {
 
 const rootReducer = combineReducers({
     currentUser: setUser,
-    thoughtsArray: getThoughtsData 
+    allThoughts: getThoughtsData,
+    fiveThoughts: getFiveThoughts
 })
 
 export default rootReducer

@@ -1,7 +1,9 @@
 import actionTypes from './actionTypes'
 
+// =========================== USER FUNCTION =========================================//
+
 export function setUser(userObj) {
-    console.log("IN SET USER 1", userObj)
+    // console.log("IN SET USER 1", userObj)
     return function (dispatch) {
         fetch('http://localhost:3000/api/v1/login', {
             method: "POST",
@@ -22,9 +24,53 @@ export function setUser(userObj) {
     }
 }
 
+
 export function refreshUser(userObj) {
-    console.log("UPDATE USER:", userObj)
+    // console.log("UPDATE USER:", userObj)
     return function (dispatch) {
         dispatch({ type: actionTypes.refreshUser, payload: userObj })
+    }
+}
+
+// =========================== THOUGHTS FUNCTION =========================================//
+function randomizer(array) {
+    let len = array.length;
+    while (len) {
+        const randomNum = Math.floor(Math.random() * len--);
+        [array[len], array[randomNum]] = [array[randomNum], array[len]];
+    }
+    return array.slice(0, 5);
+}
+
+export function browseThoughts(userId) {
+    return function (dispatch) {
+        fetch('http://localhost:3000/api/v1/thoughts')
+            .then(response => response.json())
+            .then(allThoughts => {
+                dispatch({ type: actionTypes.allThoughts, payload: allThoughts})
+
+                let otherThoughts = allThoughts.filter(thought => thought.user.id !== userId)
+                // console.log(otherThoughts)
+                let fiveThoughts = randomizer(otherThoughts)
+                // console.log(fiveThoughts)
+                dispatch({ type: actionTypes.browseThoughts, payload: fiveThoughts})
+            })
+            .catch(console.log)
+    }
+}
+
+export function postAThought (thoughtObj) {
+    return function () {
+        fetch('http://localhost:3000/api/v1/thoughts', {
+            method: "POST",
+            headers: {
+                Accepts: "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ thought: thoughtObj })
+        })
+            .then(response => response.json())
+            .then(console.log)
+            .catch(console.log)
     }
 }
