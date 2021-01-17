@@ -6,8 +6,11 @@ const defaultState = {
 }
 
 function setUser(state = defaultState.currentUser, action) {
+    console.log("IN REDUCER", action.payload)
     switch (action.type) {
         case "SET_USER":
+            return (action.payload)
+        case "REFRESH_USER":
             return (action.payload)
         default:
             return state
