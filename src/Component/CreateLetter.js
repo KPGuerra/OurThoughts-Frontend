@@ -9,8 +9,7 @@ class CreateThoughts extends React.Component {
     state = {
         user_id: localStorage.getItem("user_id"),
         thought_id: this.props.location.aboutProps.thought.id,
-        content: "",
-        like: false,
+        content: ""
     }
 
     changeHandler = (e) => {
