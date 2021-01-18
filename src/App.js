@@ -13,6 +13,8 @@ import CreateThought from './Component/CreateThought';
 import CreateLetter from './Component/CreateLetter';
 import ProfilePage from './Component/ProfilePage';
 import PastThoughts from './Component/PastThoughts'
+import ThoughtPage from './Containers/ThoughtPage'
+
 
 
 
@@ -50,6 +52,7 @@ class App extends React.Component {
           <Route path="/write-letter" component={CreateLetter}/>
           <Route path="/profile" component={ProfilePage}/>
           <Route path="/past-thoughts" component={PastThoughts}/>
+          <Route path="/thought" component={ThoughtPage}/>
 
 
         </Switch>

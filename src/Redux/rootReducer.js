@@ -4,7 +4,8 @@ const defaultState = {
     currentUser: null,
     allThoughts: [],
     fiveThoughts: [],
-    myThoughts: []
+    myThoughts: [],
+    lettersArray:[]
 }
 
 function setUser(state = defaultState.currentUser, action) {
@@ -45,11 +46,21 @@ function getMyThoughts(state = defaultState.myThoughts, action) {
     }
 }
 
+function getLetters(state = defaultState.lettersArray, action) {
+    switch (action.type) {
+        case "GET_LETTERS":
+            return (action.payload)
+        default:
+            return state
+    }
+}
+
 const rootReducer = combineReducers({
     currentUser: setUser,
     allThoughts: getThoughtsData,
     fiveThoughts: getFiveThoughts,
-    myThoughts: getMyThoughts
+    myThoughts: getMyThoughts,
+    lettersArray: getLetters
 })
 
 export default rootReducer

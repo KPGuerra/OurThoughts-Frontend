@@ -89,7 +89,16 @@ export function getPastThoughts(userId) {
     }
 }
 
-
+export function deleteThought(thoughtId) {
+    return function () {
+        fetch(`http://localhost:3000/api/v1/thoughts/${thoughtId}`, {
+            method: "DELETE",
+        })
+            .then(response => response.json())
+            .then(console.log)
+            .catch(console.log)
+    }
+}
 
 // =========================== Letters FUNCTION =========================================//
 
@@ -108,3 +117,17 @@ export function sendALetter(letterObj) {
             .catch(console.log)
     }
 }
+
+export function getLetters(thoughtId) {
+    return function (dispatch) {
+        fetch(`http://localhost:3000/api/v1/letters`)
+            .then(response => response.json())
+            .then(lettersArr => {
+                let newLettersArr = lettersArr.filter(letter => letter.thought_id === thoughtId)
+                // console.log(lettersArr)
+                dispatch({ type: actionTypes.getLetters, payload: newLettersArr })
+            })
+            .catch(console.log)
+    }
+}
+
