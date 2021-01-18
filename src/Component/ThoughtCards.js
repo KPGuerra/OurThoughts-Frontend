@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 
 class ThoughtCards extends React.Component {
@@ -13,7 +14,9 @@ class ThoughtCards extends React.Component {
                 <div>
                     <h1>{this.props.thoughtObj.title}</h1>
                     <p>{this.props.thoughtObj.content}</p>
-                    <p> - {this.props.thoughtObj.user.username}</p>
+                    <NavLink to={{ pathname: "/profile", aboutProps: { user: this.props.thoughtObj.user}}}>
+                        <p> - {this.props.thoughtObj.user.username}</p>
+                    </NavLink>
                 </div>
 
                 <div>
@@ -30,7 +33,7 @@ class ThoughtCards extends React.Component {
                         {this.renderTags()}
                     </ul>
                 </div>
-                <br/>
+                <br />
             </>
         )
     }

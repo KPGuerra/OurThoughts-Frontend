@@ -75,3 +75,19 @@ export function postAThought(thoughtObj) {
             .catch(console.log)
     }
 }
+
+export function sendALetter(letterObj) {
+    return function () {
+        fetch('http://localhost:3000/api/v1/letters', {
+            method: "POST",
+            headers: {
+                Accepts: "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ letter: letterObj })
+        })
+            .then(response => response.json())
+            .then(console.log)
+            .catch(console.log)
+    }
+}

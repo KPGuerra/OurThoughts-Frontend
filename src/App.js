@@ -10,6 +10,9 @@ import Login from './Component/Login'
 import Signup from './Component/Signup'
 import ExploreThoughts from './Containers/ExploreThoughts'
 import CreateThought from './Component/CreateThought';
+import CreateLetter from './Component/CreateLetter';
+import ProfilePage from './Component/ProfilePage';
+
 
 
 class App extends React.Component {
@@ -43,6 +46,9 @@ class App extends React.Component {
           <Route path="/signup" component={Signup} />
           <Route path="/explore-thoughts" component={ExploreThoughts}/>
           <Route path="/my-thought" component={CreateThought}/>
+          <Route path="/write-letter" component={CreateLetter}/>
+          <Route path="/profile" component={ProfilePage}/>
+
         </Switch>
       </div>
     );
