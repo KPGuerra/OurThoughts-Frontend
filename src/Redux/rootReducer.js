@@ -3,7 +3,8 @@ import { combineReducers } from 'redux'
 const defaultState = {
     currentUser: null,
     allThoughts: [],
-    fiveThoughts: []
+    fiveThoughts: [],
+    myThoughts: []
 }
 
 function setUser(state = defaultState.currentUser, action) {
@@ -35,10 +36,20 @@ function getFiveThoughts(state = defaultState.fiveThoughts, action) {
     }
 }
 
+function getMyThoughts(state = defaultState.myThoughts, action) {
+    switch (action.type) {
+        case "MY_THOUGHTS":
+            return (action.payload)
+        default:
+            return state
+    }
+}
+
 const rootReducer = combineReducers({
     currentUser: setUser,
     allThoughts: getThoughtsData,
-    fiveThoughts: getFiveThoughts
+    fiveThoughts: getFiveThoughts,
+    myThoughts: getMyThoughts
 })
 
 export default rootReducer

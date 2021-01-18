@@ -76,6 +76,23 @@ export function postAThought(thoughtObj) {
     }
 }
 
+export function getPastThoughts(userId) {
+    return function (dispatch) {
+        fetch('http://localhost:3000/api/v1/thoughts')
+            .then(response => response.json())
+            .then(allThoughts => {
+                let myThoughtsArr = allThoughts.filter(thought => thought.user_id === userId)
+                console.log(myThoughtsArr)
+                dispatch({ type: actionTypes.myThoughts, payload: myThoughtsArr })
+            })
+            .catch(console.log)
+    }
+}
+
+
+
+// =========================== Letters FUNCTION =========================================//
+
 export function sendALetter(letterObj) {
     return function () {
         fetch('http://localhost:3000/api/v1/letters', {
