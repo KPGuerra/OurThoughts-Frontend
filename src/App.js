@@ -9,6 +9,7 @@ import HomePage from './Component/HomePage';
 import Login from './Component/Login'
 import Signup from './Component/Signup'
 import ExploreThoughts from './Containers/ExploreThoughts'
+import CreateThought from './Component/CreateThought';
 
 
 class App extends React.Component {
@@ -41,6 +42,7 @@ class App extends React.Component {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/explore-thoughts" component={ExploreThoughts}/>
+          <Route path="/my-thought" component={CreateThought}/>
         </Switch>
       </div>
     );

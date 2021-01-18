@@ -43,23 +43,24 @@ function randomizer(array) {
 }
 
 export function browseThoughts(userId) {
+    // console.log(userId)
     return function (dispatch) {
         fetch('http://localhost:3000/api/v1/thoughts')
             .then(response => response.json())
             .then(allThoughts => {
-                dispatch({ type: actionTypes.allThoughts, payload: allThoughts})
-
-                let otherThoughts = allThoughts.filter(thought => thought.user.id !== userId)
+                dispatch({ type: actionTypes.allThoughts, payload: allThoughts })
+                // console.log(allThoughts)
+                let otherThoughts = allThoughts.filter(thought => thought.user_id !== userId)
                 // console.log(otherThoughts)
                 let fiveThoughts = randomizer(otherThoughts)
                 // console.log(fiveThoughts)
-                dispatch({ type: actionTypes.browseThoughts, payload: fiveThoughts})
+                dispatch({ type: actionTypes.browseThoughts, payload: fiveThoughts })
             })
             .catch(console.log)
     }
 }
 
-export function postAThought (thoughtObj) {
+export function postAThought(thoughtObj) {
     return function () {
         fetch('http://localhost:3000/api/v1/thoughts', {
             method: "POST",

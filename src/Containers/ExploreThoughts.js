@@ -14,6 +14,7 @@ class ExploreThoughts extends React.Component {
 
     componentDidUpdate (prevProps) {
         if (prevProps.currentUser !== this.props.currentUser) {
+            // console.log(this.props.currentUser.id)
             this.props.browseThoughts(this.props.currentUser.id)
         }
     }
@@ -42,7 +43,7 @@ function msp(state) {
 
 function mdp(dispatch) {
     return {
-        browseThoughts: () => dispatch(browseThoughts())
+        browseThoughts: (userId) => dispatch(browseThoughts(userId))
     }
 }
 
