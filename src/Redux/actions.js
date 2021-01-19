@@ -32,6 +32,36 @@ export function refreshUser(userObj) {
     }
 }
 
+export function editAccount (userId, updatedObj) {
+    return function(dispatch) {
+        fetch(`http://localhost:3000/api/v1/users/${userId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedObj),
+        })
+            .then(response => response.json())
+            .then(userData => {console.log('Success:', userData);
+                // dispatch({ type: actionTypes.editAccount, payload: userData})
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+}
+
+export function deleteUser(userId) {
+    return function (dispatch) {
+        fetch(`http://localhost:3000/api/v1/users/${userId}`, {
+            method: "DELETE",
+        })
+            .then(response => response.json())
+            .then(dispatch({ type: actionTypes.deleteAccount, payload: userId}))
+            .catch(console.log)
+    }
+}
+
 // =========================== THOUGHTS FUNCTION =========================================//
 function randomizer(array) {
     let len = array.length;

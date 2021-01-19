@@ -14,6 +14,10 @@ function setUser(state = defaultState.currentUser, action) {
             return (action.payload)
         case "REFRESH_USER":
             return (action.payload)
+        case "UPDATE_USER":
+            return (action.payload)
+        case "DELETE_USER":
+            return []
         default:
             return state
     }

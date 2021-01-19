@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { deleteUser } from '../Redux/actions'
 
 class ProfilePage extends React.Component {
 
+    deleteHandler = () => {
+        this.props.deleteUser(this.props.location.aboutProps.user.id)
+    }
 
     render() {
         console.log(this.props.location.aboutProps.user)
@@ -18,8 +22,11 @@ class ProfilePage extends React.Component {
                     {userObj.id === this.props.currentUser.id ?
                         <>
                             <button> INBOX </button>
-                            <button> EDIT MY ACCOUNT</button>
-                            
+                        <NavLink to={{pathname: "/edit", aboutProps: { user: userObj}}}>
+                                <button> EDIT MY ACCOUNT </button>
+                            </NavLink>
+                            <button onClick={this.deleteHandler}> DELETE MY ACCOUNT </button>
+
                             <NavLink to="/past-thoughts">
                                 <button> MY THOUGHTS </button>
                             </NavLink>
@@ -49,4 +56,10 @@ function msp(state) {
         currentUser: state.currentUser
     })
 }
-export default connect(msp)(ProfilePage)
+
+function mdp(dispatch) {
+    return ({
+        deleteUser: (userId) => dispatch(deleteUser(userId))
+    })
+}
+export default connect(msp, mdp)(ProfilePage)
