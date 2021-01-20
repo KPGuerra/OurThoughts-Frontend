@@ -1,0 +1,41 @@
+.homepage-container {
+    // background-color: rgba(0, 0, 0, 0.555);
+    border-radius: 20%;
+    text-align: center;
+    height: 60vh;
+    // border-color: aqua;
+    // border-style: solid;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+    
+}
+
+.homepage-container h1 {
+    padding: 70px 0;
+    font-size: 70px;
+    font-weight: 900;
+    color: rgb(129, 163, 238);
+}
+
+.homepage-container p {
+    font-size: 40px;
+    font-weight: 200;
+    color: rgb(203, 129, 238);
+}
+
+.homepage-container button {
+    margin-top: 10px;
+    margin-right: 20px;
+    font-size: medium;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(2, 6, 58);
+    width: 100px;
+    height: 35px;
+    color: aliceblue;
+    border:none;
+
+}

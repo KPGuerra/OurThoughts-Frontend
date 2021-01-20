@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css';
-import 'primeflex/primeflex.css'
 
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
@@ -42,11 +41,13 @@ class App extends React.Component {
     }
   }
 
+
+
   render() {
     return (
-      <div className="App">
-          <div className="App-header">
-            <Header />
+      <>
+        <div className="header">
+          <Header />
         </div>
         <div className="main">
           <Switch>
@@ -59,14 +60,20 @@ class App extends React.Component {
             <Route path="/profile" component={ProfilePage} />
             <Route path="/past-thoughts" component={PastThoughts} />
             <Route path="/thought" component={ThoughtPage} />
-            <Route path="/edit" component={EditAccount} />
+            <Route path="/edit" render={() => <EditAccount userObj={this.props.currentUser}/> } />
           </Switch>
         </div>
         <footer className="App-footer">
           <Footer />
         </footer>
-      </div>
+      </>
     );
+  }
+}
+
+function msp(state) {
+  return {
+    currentUser: state.currentUser
   }
 }
 
@@ -76,4 +83,4 @@ function mdp(dispatch) {
   }
 }
 
-export default connect(null, mdp)(App)
+export default connect(msp, mdp)(App)

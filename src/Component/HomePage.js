@@ -1,16 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import '../Styles/HomePage.scss'
 
 
 class HomePage extends React.Component {
 
     render() {
         return (
-            <>
+            <div className="homepage-container">
                 {this.props.currentUser ? (
                     <>
-                        <h2>WELCOME</h2>
+                        <h1>WELCOME</h1>
                         <br />
                         <NavLink to="/my-thought">
                             <button>SHARE YOUR THOUGHTS</button>
@@ -25,18 +26,18 @@ class HomePage extends React.Component {
 
                     <>
                         <h1> OUR THOUGHTS </h1>
-                        <p> A place to share our thoughts</p>
-
+                        <p> A safe place to share your thoughts.</p>
+                        <p> Spread kindness & receive it. </p>
+                        <br/>
                         <NavLink to="/login">
                             <button> LOG IN </button>
                         </NavLink>
-
                         <NavLink to="/signup">
                             <button> SIGN UP </button>
                         </NavLink>
                     </>
                 }
-            </>
+            </div>
         )
     }
 }

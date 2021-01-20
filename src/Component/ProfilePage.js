@@ -6,12 +6,12 @@ import { deleteUser } from '../Redux/actions'
 class ProfilePage extends React.Component {
 
     deleteHandler = () => {
-        this.props.deleteUser(this.props.location.aboutProps.user.id)
+        this.props.deleteUser(this.props.currentUser.id)
     }
 
     render() {
-        console.log(this.props.location.aboutProps.user)
-        let userObj = this.props.location.aboutProps.user
+        console.log(this.props.currentUser)
+        let userObj = this.props.currentUser
         return (
             <div>
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { editAccount } from '../Redux/actions'
 
 class EditAccount extends React.Component {
-    userObj = this.props.location.aboutProps.user
+    userObj = this.props.userObj
 
     state = {
         username: this.userObj.username,

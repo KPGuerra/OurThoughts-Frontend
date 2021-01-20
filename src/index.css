@@ -4,7 +4,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: palevioletred;
+  background-image: url('https://i.pinimg.com/originals/ce/ea/77/ceea7756f6b2fd0e2e3de9f94a0ba555.jpg');
+  background-position: top;
+  padding: .5em;
+  margin-bottom: 50px;
 }
 
 *{
@@ -16,5 +19,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html {
+  height: 100%;
 }
 
