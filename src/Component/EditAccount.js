@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { editAccount } from '../Redux/actions'
+import { withRouter } from 'react-router'
+
 
 class EditAccount extends React.Component {
     userObj = this.props.userObj
@@ -21,7 +23,7 @@ class EditAccount extends React.Component {
 
     editHandler = (e) => {
         e.preventDefault()
-        this.props.editAccount(this.userObj.id, this.state)
+        this.props.editAccount(this.userObj.id, this.state, this.props.history)
     }
 
     render() {
@@ -61,8 +63,8 @@ class EditAccount extends React.Component {
 
 function mdp(dispatch) {
     return {
-        editAccount: (userId, userObj) => dispatch(editAccount(userId, userObj))
+        editAccount: (userId, userObj,history) => dispatch(editAccount(userId, userObj,history))
     }
 }
 
-export default connect(null, mdp)(EditAccount)
+export default withRouter(connect(null, mdp)(EditAccount))

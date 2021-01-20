@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setUser } from '../Redux/actions'
+import { InputText } from 'primereact/inputtext';
+import { withRouter } from 'react-router'
+import '../Styles/Login.scss'
 
 class Signup extends React.Component {
 
@@ -27,50 +30,79 @@ class Signup extends React.Component {
                 Accepts: "application/json",
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ user: this.state})
+            body: JSON.stringify({ user: this.state })
         })
-        .then(response => response.json())
-        .then( userData => {
-            let loginState = {
-                username: this.state.username,
-                password: this.state.password
-            }
+            .then(response => response.json())
+            .then(userData => {
+                let loginState = {
+                    username: this.state.username,
+                    password: this.state.password
+                }
 
-            this.props.currentUser(loginState)
-        })
-        .catch(console.log)
+                this.props.currentUser(loginState, this.props.history)
+            })
+            .catch(console.log)
     }
 
     render() {
         return (
-            <>
+            <div className="container" id="cloud-intro">
                 <h1> SIGN UP </h1>
                 <form onSubmit={this.signupHandler}>
-                    <label>USERNAME</label>
-                    <input type="text" name="username" value={this.state.username} onChange={this.changeHandler} required />
-                    <br/>
-                    <label>PASSWORD</label>
-                    <input type="password" name="password" value={this.state.password} onChange={this.changeHandler} required />
-                    <br/>
-                    <label>EMAIL</label>
-                    <input type="email" name="email" value={this.state.email} onChange={this.changeHandler} required />
-                    <br/>
-                    <label>NAME</label>
-                    <input type="text" name="name" value={this.state.name} onChange={this.changeHandler} required />
-                    <br/>
-                    <label>PRONOUNS</label>
-                    <input type="text" name="pronouns" value={this.state.pronouns} onChange={this.changeHandler} required />
-                    <br/>
-                    <label>BIOGRAPHY</label>
-                    <input type="text" name="bio" value={this.state.bio} onChange={this.changeHandler} required />
-                    <br/> 
-                    <label>AVATAR</label>
-                    <input type="text" name="avatar" value={this.state.avatar} onChange={this.changeHandler} required />
-                    <br/> 
-                    <br/><br/>
+                    <div className="p-field p-grid">
+                        <label>USERNAME</label>
+                        <div className="p-col">
+                            <InputText type="text" name="username" value={this.state.username} onChange={this.changeHandler} required />
+                        </div>
+                    </div>
+
+                    <div className="p-field p-grid">
+                        <label>PASSWORD</label>
+                        <div className="p-col">
+                            <InputText type="password" name="password" value={this.state.password} onChange={this.changeHandler} required />
+                        </div>
+                    </div>
+
+                    <div className="p-field p-grid">
+                        <label>EMAIL</label>
+                        <div className="p-col">
+                            <InputText type="email" name="email" value={this.state.email} onChange={this.changeHandler} required />
+                        </div>
+                    </div>
+
+                    <div className="p-field p-grid">
+                        <label>NAME</label>
+                        <div className="p-col">
+                            <InputText type="text" name="name" value={this.state.name} onChange={this.changeHandler} required />
+                        </div>
+                    </div>
+
+                    <div className="p-field p-grid">
+                        <label>PRONOUNS</label>
+                        <div className="p-col">
+                            <InputText type="text" name="pronouns" value={this.state.pronouns} onChange={this.changeHandler} required />
+                        </div>
+                    </div>
+
+                    <div className="p-field p-grid">
+                        <label>BIOGRAPHY</label>
+                        <div className="p-col">
+                            <InputText type="text" name="bio" value={this.state.bio} onChange={this.changeHandler} required />
+                        </div>
+                    </div>
+
+                    <div className="p-field p-grid">
+
+                        <label>AVATAR</label>
+                        <div className="p-col">
+
+                            <InputText type="text" name="avatar" value={this.state.avatar} onChange={this.changeHandler} required />
+                        </div>
+                    </div>
+                    <br /><br />
                     <button> SIGN UP </button>
                 </form>
-            </>
+            </div>
         )
     }
 }
@@ -78,8 +110,8 @@ class Signup extends React.Component {
 
 function mdp(dispatch) {
     return {
-        currentUser: (userObj) => dispatch(setUser(userObj))
+        currentUser: (userObj, history) => dispatch(setUser(userObj, history))
     }
 }
 
-export default connect(null, mdp)(Signup)
+export default withRouter(connect(null, mdp)(Signup))

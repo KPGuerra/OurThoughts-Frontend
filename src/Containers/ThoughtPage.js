@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getLetters } from '../Redux/actions'
 import { deleteThought } from '../Redux/actions'
+import { withRouter } from 'react-router'
 
 import LetterCards from '../Component/LetterCards'
 import ThoughtCards from '../Component/ThoughtCards'
@@ -46,7 +47,7 @@ class ThoughtPage extends React.Component {
     }
 
     deleteHandler = () => {
-        this.props.deleteThought(this.props.location.aboutProps.thought.id)
+        this.props.deleteThought(this.props.location.aboutProps.thought.id, this.props.history)
     }
 
     render() {
@@ -81,8 +82,8 @@ function msp(state) {
 function mdp(dispatch) {
     return {
         getLetters: (thoughtId) => dispatch(getLetters(thoughtId)),
-        deleteThought: (thoughtId) => dispatch(deleteThought(thoughtId))
+        deleteThought: (thoughtId,history) => dispatch(deleteThought(thoughtId,history))
     }
 }
 
-export default connect(msp, mdp)(ThoughtPage)
+export default withRouter(connect(msp, mdp)(ThoughtPage))

@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { sendALetter } from '../Redux/actions'
+import { withRouter } from 'react-router'
 
 import ThoughtCards from '../Component/ThoughtCards'
 
@@ -20,7 +21,7 @@ class CreateThoughts extends React.Component {
 
     sendLetterHandler = (e) => {
         e.preventDefault() 
-        this.props.sendALetter(this.state)
+        this.props.sendALetter(this.state, this.props.history)
     }
 
     render () {
@@ -33,9 +34,11 @@ class CreateThoughts extends React.Component {
             </div>
 
             <h1> Write A Thoughtful Letter </h1>
+            <br/>
             <form onSubmit={this.sendLetterHandler}>
-                <label>Content</label>
-                <input type="text" name="content" value={this.state.content} onChange={this.changeHandler} required />
+                
+                <textarea type="text" name="content" value={this.state.content} onChange={this.changeHandler} required />
+                <br/> <br/>
                 <button> Send Letter </button>
             </form> 
             </> 
@@ -45,8 +48,8 @@ class CreateThoughts extends React.Component {
 
 function mdp (dispatch) {
     return {
-        sendALetter: (userObj) => dispatch(sendALetter(userObj))
+        sendALetter: (userObj, history) => dispatch(sendALetter(userObj,history))
     }
 }
 
-export default connect(null, mdp)(CreateThoughts)
+export default withRouter(connect(null, mdp)(CreateThoughts))

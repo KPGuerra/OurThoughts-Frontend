@@ -14,9 +14,11 @@ class PastThoughts extends React.Component {
             return (
                 <li>
                     <h4>{thought.date}</h4>
+                    <br/>
                     <NavLink to={{pathname: "/thought", aboutProps: {thought: thought}}}>
                         <h5>{thought.title}</h5>
                     </NavLink>
+                    <br/>
                     <h5>{thought.letters.length}</h5>
                 </li>
             )
@@ -28,8 +30,9 @@ class PastThoughts extends React.Component {
             <div>
                 <h1> MY THOUGHTS</h1>
                 <div>
-                    {this.props.myThoughts.length === 0 ? <h1>LOADING...</h1> :
+                    {this.props.myThoughts.length === 0 ? null :
                         <ul>
+                            <br/>
                             {this.renderListOfThoughts()}
                         </ul>
                     }

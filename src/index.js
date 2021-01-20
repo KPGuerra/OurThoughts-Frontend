@@ -12,6 +12,7 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import rootReducer from './Redux/rootReducer'
 import thunk from 'redux-thunk'
+import 'primeflex/primeflex.css';
 
 const persistConfig = {
   key: 'root',

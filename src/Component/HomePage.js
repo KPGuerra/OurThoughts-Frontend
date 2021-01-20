@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import '../Styles/HomePage.scss'
+// import 'primeflex/primeflex.css';
 
 
 class HomePage extends React.Component {
@@ -30,10 +31,10 @@ class HomePage extends React.Component {
                         <p> Spread kindness & receive it. </p>
                         <br/>
                         <NavLink to="/login">
-                            <button> LOG IN </button>
+                            <button className="p-shadow-24"> LOG IN </button>
                         </NavLink>
                         <NavLink to="/signup">
-                            <button> SIGN UP </button>
+                            <button className="p-shadow-24"> SIGN UP </button>
                         </NavLink>
                     </>
                 }

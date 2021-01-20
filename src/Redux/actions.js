@@ -2,7 +2,7 @@ import actionTypes from './actionTypes'
 
 // =========================== USER FUNCTION =========================================//
 
-export function setUser(userObj) {
+export function setUser(userObj, history) {
     // console.log("IN SET USER 1", userObj)
     return function (dispatch) {
         fetch('http://localhost:3000/api/v1/login', {
@@ -19,6 +19,7 @@ export function setUser(userObj) {
                 localStorage.setItem("token", userData.jwt)
                 localStorage.setItem("user_id", userData.user.id)
                 dispatch({ type: actionTypes.currentUser, payload: userData })
+                history.push("/home")
             })
             .catch(console.log)
     }
@@ -32,8 +33,8 @@ export function refreshUser(userObj) {
     }
 }
 
-export function editAccount (userId, updatedObj) {
-    return function(dispatch) {
+export function editAccount(userId, updatedObj, history) {
+    return function (dispatch) {
         fetch(`http://localhost:3000/api/v1/users/${userId}`, {
             method: 'PATCH',
             headers: {
@@ -42,7 +43,9 @@ export function editAccount (userId, updatedObj) {
             body: JSON.stringify(updatedObj),
         })
             .then(response => response.json())
-            .then(userData => {console.log('Success:', userData);
+            .then(userData => {
+                // console.log('Success:', userData)
+                history.push("/profile")
                 // dispatch({ type: actionTypes.editAccount, payload: userData})
             })
             .catch((error) => {
@@ -51,13 +54,16 @@ export function editAccount (userId, updatedObj) {
     }
 }
 
-export function deleteUser(userId) {
+export function deleteUser(userId, history) {
     return function (dispatch) {
         fetch(`http://localhost:3000/api/v1/users/${userId}`, {
             method: "DELETE",
         })
             .then(response => response.json())
-            .then(dispatch({ type: actionTypes.deleteAccount, payload: userId}))
+            .then(thing => {
+                dispatch({ type: actionTypes.deleteAccount, payload: userId })
+                history.push('/home')
+            })
             .catch(console.log)
     }
 }
@@ -90,7 +96,7 @@ export function browseThoughts(userId) {
     }
 }
 
-export function postAThought(thoughtObj) {
+export function postAThought(thoughtObj, history) {
     return function () {
         fetch('http://localhost:3000/api/v1/thoughts', {
             method: "POST",
@@ -101,7 +107,7 @@ export function postAThought(thoughtObj) {
             body: JSON.stringify({ thought: thoughtObj })
         })
             .then(response => response.json())
-            .then(console.log)
+            .then(history.push('/home'))
             .catch(console.log)
     }
 }
@@ -119,20 +125,20 @@ export function getPastThoughts(userId) {
     }
 }
 
-export function deleteThought(thoughtId) {
+export function deleteThought(thoughtId, history) {
     return function () {
         fetch(`http://localhost:3000/api/v1/thoughts/${thoughtId}`, {
             method: "DELETE",
         })
             .then(response => response.json())
-            .then(console.log)
+            .then(history.push('/profile'))
             .catch(console.log)
     }
 }
 
 // =========================== Letters FUNCTION =========================================//
 
-export function sendALetter(letterObj) {
+export function sendALetter(letterObj, history) {
     return function () {
         fetch('http://localhost:3000/api/v1/letters', {
             method: "POST",
@@ -143,7 +149,7 @@ export function sendALetter(letterObj) {
             body: JSON.stringify({ letter: letterObj })
         })
             .then(response => response.json())
-            .then(console.log)
+            .then(history.goBack())
             .catch(console.log)
     }
 }

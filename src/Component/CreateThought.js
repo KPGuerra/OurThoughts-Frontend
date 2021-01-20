@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { postAThought } from '../Redux/actions'
+import { withRouter } from 'react-router'
 
 class CreateThoughts extends React.Component {
 
@@ -36,7 +37,7 @@ class CreateThoughts extends React.Component {
 
     postHandler = (e) => {
         e.preventDefault() 
-        this.props.postAThought(this.state)
+        this.props.postAThought(this.state, this.props.history)
     }
 
     render () {
@@ -44,11 +45,14 @@ class CreateThoughts extends React.Component {
             <>
             <h1> What's on your mind? </h1>
             <form onSubmit={this.postHandler}>
+            <br/>
                 <label>TITLE</label>
+                <br/>
                 <input type="text" name="title" value={this.state.title} onChange={this.changeHandler} required />
-
+                <br/> <br/>
                 <label>CONTENT</label>
-                <input type="text" name="content" value={this.state.content} onChange={this.changeHandler} required />
+                <br/>
+                <textarea type="text" name="content" value={this.state.content} onChange={this.changeHandler} required />
                 <br/> <br/>
                 
                 <label>SENTIMENT</label> 
@@ -80,8 +84,8 @@ class CreateThoughts extends React.Component {
 
 function mdp (dispatch) {
     return {
-        postAThought: (userObj) => dispatch(postAThought(userObj))
+        postAThought: (userObj,history) => dispatch(postAThought(userObj,history))
     }
 }
 
-export default connect(null, mdp)(CreateThoughts)
+export default withRouter(connect(null, mdp)(CreateThoughts))

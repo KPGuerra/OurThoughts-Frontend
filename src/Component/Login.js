@@ -1,6 +1,10 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { setUser } from '../Redux/actions'
+import { InputText } from 'primereact/inputtext';
+import { withRouter } from 'react-router'
+import '../Styles/Login.scss'
+
 
 class Login extends React.Component {
 
@@ -14,32 +18,40 @@ class Login extends React.Component {
     }
 
     loginHandler = (e) => {
-        e.preventDefault() 
-        this.props.currentUser(this.state)
+        e.preventDefault()
+        this.props.currentUser(this.state, this.props.history)
     }
 
-    render () {
+    render() {
         return (
-            <>
-            <h1> LOG IN </h1>
-            <form onSubmit={this.loginHandler}>
-                <label>USERNAME</label>
-                <input type="text" name="username" value={this.state.username} onChange={this.changeHandler} required />
-                <br/>
-                <label>PASSWORD</label>
-                <input type="password" name="password" value={this.state.password} onChange={this.changeHandler} required />
-                <br/> <br/>
-                <button> LOG IN </button>
-            </form>
-            </>
+            <div className="container" id="cloud-intro">
+                <h1> LOG IN </h1>
+                <br />
+                <form onSubmit={this.loginHandler}>
+                    <div className="p-field p-grid">
+                        <label htmlFor="username">USERNAME</label>
+                        <div className="p-col">
+                            <InputText id="username" type="text" name="username" value={this.state.username} onChange={this.changeHandler} required />
+                        </div>
+                    </div>
+                    <div className="p-field p-grid">
+                        <label htmlFor="in">PASSWORD</label>
+                        <div className="p-col">
+                            <InputText id="in" type="password" name="password" value={this.state.password} onChange={this.changeHandler} required />
+                        </div>
+                    </div>
+                    <br /> <br />
+                    <button> LOG IN </button>
+                </form>
+            </div>
         )
     }
 }
 
-function mdp (dispatch) {
+function mdp(dispatch) {
     return {
-        currentUser: (userObj) => dispatch(setUser(userObj))
+        currentUser: (userObj, history) => dispatch(setUser(userObj, history))
     }
 }
 
-export default connect(null, mdp)(Login)
+export default  withRouter(connect(null, mdp)(Login))
