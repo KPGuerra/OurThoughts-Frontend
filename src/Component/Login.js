@@ -24,24 +24,25 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="container" id="cloud-intro">
-                <h1> LOG IN </h1>
+            <div className="container">
                 <br />
-                <form onSubmit={this.loginHandler}>
+                <form className="form" onSubmit={this.loginHandler}>
+                <h1> LOG IN </h1>
+                <br/>
                     <div className="p-field p-grid">
                         <label htmlFor="username">USERNAME</label>
                         <div className="p-col">
-                            <InputText id="username" type="text" name="username" value={this.state.username} onChange={this.changeHandler} required />
+                            <InputText  className="input" id="username" type="text" name="username" value={this.state.username} onChange={this.changeHandler} required />
                         </div>
                     </div>
                     <div className="p-field p-grid">
-                        <label htmlFor="in">PASSWORD</label>
+                        <label htmlFor="password">PASSWORD</label>
                         <div className="p-col">
-                            <InputText id="in" type="password" name="password" value={this.state.password} onChange={this.changeHandler} required />
+                            <InputText  className="input" id="password" type="password" name="password" value={this.state.password} onChange={this.changeHandler} required />
                         </div>
                     </div>
                     <br /> <br />
-                    <button> LOG IN </button>
+                    <button className="button"> LOG IN </button>
                 </form>
             </div>
         )

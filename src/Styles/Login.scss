@@ -1,14 +1,16 @@
-.container{
-    margin: auto;
-    padding: 243px;
-    // background-color: aquamarine;
-    text-align: center;
-    // background-color: #007ced;
-	// background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%);
-}
+// .container{
+//     // margin: auto;
+//     // padding: 243px;
+//     // width: 300px;
+//     // background-color: aquamarine;
+//     // text-align: center;
+//     // background-color: #007ced;
+// 	// background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%);
+// }
 #cloud-intro{
   position: relative;
-  height: 100%;
+//   height: 100%;
+//   width: 100%;
   background: url(https://static.radulescu.me/examples/clouds/clouds1000.png);
   background: url(https://static.radulescu.me/examples/clouds/clouds1000.png) 0 200px,
               url(https://static.radulescu.me/examples/clouds/clouds1200_1.png) 0 300px,
@@ -22,5 +24,79 @@
   100% {
     background-position: 1000px 200px, 1200px 300px, 1100px 250px;
   }
-
 }
+
+// // .form {
+// //     width: 100%
+// // }
+
+.container {
+    width: 40%;
+    height: 50%;
+    margin: 0 auto;
+    text-align: center;
+    }
+    .form {
+    background: #ffffff;
+    padding: 40px 20px;
+    }
+    label {
+        font-size: 20px;
+        margin-right: 0;
+    }
+    .input {
+    display: block;
+    height: 42px;
+    width: 80%;
+    margin: 0 auto 20px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #8F7474;
+    }
+
+.button {
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50%;
+  color: rgba(255,255,255,0.9);
+  border-radius: 1%;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 600%;
+  -webkit-animation: anime 16s linear infinite;
+          animation: anime 16s linear infinite;
+}
+.btn2 {
+  position: absolute;
+  margin-top: -70px;
+  z-index: -1;
+  filter: blur(30px);
+  opacity: 0.8;
+}
+@-webkit-keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    .textarea {
+    height: 100px;
+    }
