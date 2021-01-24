@@ -46,10 +46,10 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div className="header">
+        <>
           <Header />
-        </div>
-        <div className="main">
+        </>
+        <>
           <Switch>
             <Route path="/home" render={() => <HomePage />} />
             <Route path="/login" component={Login} />
@@ -63,7 +63,7 @@ class App extends React.Component {
             <Route path="/thought" component={ThoughtPage} />
             <Route path="/edit" render={() => <EditAccount userObj={this.props.currentUser}/> } />
           </Switch>
-        </div>
+        </>
         <footer className="App-footer">
           <Footer />
         </footer>
