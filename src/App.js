@@ -9,6 +9,8 @@ import Header from './Component/Header'
 import HomePage from './Component/HomePage';
 import Login from './Component/Login'
 import Signup from './Component/Signup'
+import Inbox from './Component/Inbox'
+
 import ExploreThoughts from './Containers/ExploreThoughts'
 import CreateThought from './Component/CreateThought';
 import CreateLetter from './Component/CreateLetter';
@@ -18,9 +20,7 @@ import ThoughtPage from './Containers/ThoughtPage'
 import EditAccount from './Component/EditAccount'
 import Footer from './Component/Footer';
 
-
-
-
+// console.log(process.env.REACT_APP_API_KEY)
 
 class App extends React.Component {
 
@@ -54,6 +54,7 @@ class App extends React.Component {
             <Route path="/home" render={() => <HomePage />} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
+            <Route path="/inbox" component={Inbox} />
             <Route path="/explore-thoughts" component={ExploreThoughts} />
             <Route path="/my-thought" component={CreateThought} />
             <Route path="/write-letter" component={CreateLetter} />
