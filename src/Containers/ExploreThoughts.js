@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { browseThoughts } from "../Redux/actions"
 import ThoughtCards from '../Component/ThoughtCards'
 import { NavLink } from 'react-router-dom'
+import styled from "styled-components";
+import '../Styles/ThoughtCards.scss'
 
 
 class ExploreThoughts extends React.Component {
@@ -54,9 +56,10 @@ class ExploreThoughts extends React.Component {
 
     render() {
         return (
-            <div>
+            <Wrapper>
                 {this.props.fiveThoughts.length === 0 ? <h1>LOADING ...</h1> :
                     <>
+                        
                         {this.renderThoughtCards()}
                         <button onClick={this.prevThought}>Previous</button>
                         <NavLink to={{pathname: "/write-letter", aboutProps: { thought: this.props.fiveThoughts[this.state.thoughtIndex]}}}>
@@ -65,10 +68,18 @@ class ExploreThoughts extends React.Component {
                         <button onClick={this.nextThought}>Next</button>
                     </>
                 }
-            </div>
+            </Wrapper>
         )
     }
 }
+
+const Wrapper = styled.div`
+    height: 88.6%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    position: center;
+`
 
 function msp(state) {
     return ({

@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css';
+import './Styles/HomePage.scss'
 
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux'
@@ -46,10 +47,14 @@ class App extends React.Component {
   render() {
     return (
       <>
+
         <>
           <Header />
         </>
         <>
+          <div id='stars'></div>
+          <div id='stars2'></div>
+          <div id='stars3'></div>
           <Switch>
             <Route path="/home" render={() => <HomePage />} />
             <Route path="/login" component={Login} />
@@ -61,7 +66,7 @@ class App extends React.Component {
             <Route path="/profile" component={ProfilePage} />
             <Route path="/past-thoughts" component={PastThoughts} />
             <Route path="/thought" component={ThoughtPage} />
-            <Route path="/edit" render={() => <EditAccount userObj={this.props.currentUser}/> } />
+            <Route path="/edit" render={() => <EditAccount userObj={this.props.currentUser} />} />
           </Switch>
         </>
         <footer className="App-footer">

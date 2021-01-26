@@ -8,38 +8,61 @@ import styled from "styled-components";
 
 class HomePage extends React.Component {
 
+    TimeCheck = () => {
+        let amOrPm
+        var d = new Date()
+        let hour = d.getHours()
+        
+        if (hour > 12) {
+            amOrPm = "pm"
+        }
+        else {
+            amOrPm = "am"
+        }
+
+        return amOrPm
+    }
+
     render() {
         return (
             <Wrapper>
-                <div id='stars'></div>
-                <div id='stars2'></div>
-                <div id='stars3'></div>
                 {this.props.currentUser ? (
                     <Container>
-                            <Title>WELCOME</Title>
-                            <br />
-                            <NavLink to="/my-thought">
-                                <Button>SHARE YOUR THOUGHTS</Button>
-                            </NavLink>
+                        {this.TimeCheck() === "pm" ? 
+                        <>
+                        <Title className="glow" >Good Afternoon {this.props.currentUser.name}!</Title> 
+                        <br/>
+                        <About> Self care means being patient & kind to yourself.</About>
+                        {/* <About> Take time for yourself.</About> */}
+                        </>
+                        
+                        : <Title className="glow" >Good Morning {this.props.currentUser.name}!</Title>}
+                        <br/>
+                            <About> Self care is about prioritizing yourself.</About>
+                            {/* <About> Taking care of yourself is the best way to take care of others.</About> */}
+                        <br /><br />
+                        <NavLink to="/my-thought">
+                            <Button>SHARE YOUR THOUGHTS</Button>
+                        </NavLink>
 
-                            <NavLink to="/explore-thoughts">
-                                <Button>BROWSE OTHER THOUGHTS</Button>
-                            </NavLink>
+                        <NavLink to="/explore-thoughts">
+                            <Button>BROWSE OTHER THOUGHTS</Button>
+                        </NavLink>
 
                     </Container>
                 ) :
 
                     <Container>
                         <Title> OUR THOUGHTS </Title>
-                        <br />
+                        <br /><br />
                         <About> A safe place to share your thoughts.</About>
                         <About> Spread kindness & receive it. </About>
-                        <br /> <br />
+                        <br /> <br /><br />
                         <NavLink to="/login">
-                            <Button className="p-shadow-24"> LOG IN </Button>
+                            <Button> LOG IN </Button>
                         </NavLink>
                         <NavLink to="/signup">
-                            <Button className="p-shadow-24"> SIGN UP </Button>
+                            <Button> SIGN UP </Button>
                         </NavLink>
                     </Container>
                 }
@@ -54,46 +77,73 @@ const Wrapper = styled.div`
     text-align: center;
     margin: auto;
     position: center;
-
-    background: radial-gradient(200% 100% at bottom center, #f7f7b6, #e96f92, #75517d, #1b2947);
-  background: radial-gradient(220% 105% at top center, #1b2947 10%, #75517d 40%, #e96f92 65%, #f7f7b6);
-  background-attachment: fixed;
-  overflow: hidden;
-  
 `
 
 const Container = styled.div`
-margin: 0;
-position: absolute;
-top: 50%;
-left: 50%;
--ms-transform: translate(-50%, -50%);
-transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 `
 
 const Title = styled.h1`
+    font-weight: 700;
     font-size: 70px;
-    font-weight: 900;
-    color: rgb(129, 163, 238);
+    color: #25ced1;
+    text-align: center;
+    text-shadow: 0px 0px 6px #25ced1;
+
 `
 const About = styled.p`
     font-size: 40px;
     font-weight: 200;
-    color: rgb(203, 129, 238);
+    color: #ffc2e0;
+    margin: 20px;
+    align-self: start.
 `
 
 const Button = styled.button`
-    margin-top: 10px;
-    margin-right: 20px;
-    font-size: medium;
-    cursor: pointer;
-    align-items: center;
-   
-    background-color: rgb(2, 6, 58);
+    background:  #ffcb77;
+    border: 0px solid;
+    border-color: #EF476F;
     width: 300px;
-    height: 35px;
-    color: aliceblue;
-    border:none;
+    font-weight: bolder;
+    font: inherit;
+    line-height: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bolder;
+   
+    color: var(--color);
+    transition: 0.25s;
+    border-color: var(--hover);
+    color: black;
+    --color: #ffcb77;
+    --hover: #ffcb77;
+    :hover,:focus {
+        border-color: #ffcb77;
+        -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+
+    @-webkit-keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
 `
 
 

@@ -36,21 +36,18 @@
 
 .App-footer {
   height: 50px;
-    background: rgb(255,93,143);
-    background: -moz-linear-gradient(90deg, rgba(255,93,143,1) 0%, rgba(87,190,247,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(255,93,143,1) 0%, rgba(87,190,247,1) 100%);
-    background: linear-gradient(90deg, rgba(255,93,143,1) 0%, rgba(87,190,247,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff5d8f",endColorstr="#57bef7",GradientType=1);
+  background: black;
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #25ced1;
   /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
-  /* padding: 0.857rem; */
+  padding: 0.857rem;
+  text-decoration: none;
 }
 
 
@@ -89,6 +86,10 @@ body,
   padding: 0;
   height: 100%;
   width: 100%;
+  background: radial-gradient(200% 100% at bottom center, #f7f7b6, #e96f92, #75517d, #1b2947);
+  background: radial-gradient(220% 105% at top center, #1b2947 10%, #75517d 40%, #e96f92 65%, #f7f7b6);
+  background-attachment: fixed;
+  overflow: hidden;
   
 }
 
@@ -185,6 +186,7 @@ video {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
   /* overflow: hidden; */
 }
 /* HTML5 display-role reset for older browsers
@@ -232,10 +234,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+*/
 a {
-  color: #3913b8;
-  font-weight: 600;
+  color: #ffcb77;
+  font-size: medium;
   text-decoration: none;
-} */
+} 
 
