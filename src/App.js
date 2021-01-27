@@ -20,6 +20,7 @@ import PastThoughts from './Component/PastThoughts'
 import ThoughtPage from './Containers/ThoughtPage'
 import EditAccount from './Component/EditAccount'
 import Footer from './Component/Footer';
+import ResourcesPage from './Component/ResourcesPage';
 
 // console.log(process.env.REACT_APP_API_KEY)
 
@@ -67,6 +68,8 @@ class App extends React.Component {
             <Route path="/past-thoughts" component={PastThoughts} />
             <Route path="/thought" component={ThoughtPage} />
             <Route path="/edit" render={() => <EditAccount userObj={this.props.currentUser} />} />
+            <Route path="/resources" component={ResourcesPage} />
+
           </Switch>
         </>
         <footer className="App-footer">

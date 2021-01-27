@@ -76,8 +76,6 @@ color: #FFCB77;
 text-align: center;
 text-shadow: 0px 0px 6px #FFCB77;
 margin-bottom: 20px;
-
-
 `
 
 
