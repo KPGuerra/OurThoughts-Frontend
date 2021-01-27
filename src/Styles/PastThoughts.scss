@@ -1,0 +1,38 @@
+#thoughts {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #thoughts td, #thoughts th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #thoughts tr {
+      background-color:rgba(0, 0, 0, 0.664);
+    }
+
+  #thoughts tr:hover {
+      background-color: #001F52;
+    }
+  
+  #thoughts th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #FB60A6;
+    color: #011627;
+    font-weight: 600;
+    font-size: large;
+  }
+
+  #thoughts td {
+    color: white;
+    font-weight: 400;
+    font-size: large;
+  }
+
+  #thoughts a {
+    font-weight: 400;
+    font-size: large;
+  }

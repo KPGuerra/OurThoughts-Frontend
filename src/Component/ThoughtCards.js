@@ -14,7 +14,7 @@ class ThoughtCards extends React.Component {
         return (
             <Wrapper>
 
-
+                
                 <Title>{this.props.thoughtObj.title}</Title>
                 <br />
                 <RandomThought>{this.props.thoughtObj.content}
@@ -30,7 +30,7 @@ class ThoughtCards extends React.Component {
 
                     <Sub>More Information</Sub>
                 <Container>
-                    <div style={{ width: "45%", float: "left", textAlign: "left", marginTop: "1px"}}>
+                    <div style={{ width: "45%", float: "left", textAlign: "left", marginTop: "1px", marginLeft: "10px"}}>
 
                         <Heading>  Sentiment: {this.props.thoughtObj.sentiment}</Heading>
                         <br />
@@ -47,7 +47,7 @@ class ThoughtCards extends React.Component {
                     </div>
                 </Container>
                 <br />
-
+                
             </Wrapper>
         )
     }
@@ -62,7 +62,6 @@ const Wrapper = styled.div`
     margin-bottom: 100px;
     position: relative;
     top: 10%;
-
 `
 
 const Title = styled.h1`

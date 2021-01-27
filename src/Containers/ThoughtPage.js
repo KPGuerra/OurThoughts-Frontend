@@ -6,6 +6,7 @@ import { withRouter } from 'react-router'
 
 import LetterCards from '../Component/LetterCards'
 import ThoughtCards from '../Component/ThoughtCards'
+import styled from "styled-components";
 
 
 class ThoughtPage extends React.Component {
@@ -52,26 +53,88 @@ class ThoughtPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <Wrapper>
+                <div style={{ width: "50%", float: "left" }}>
+                    <div style={{marginTop: "45px"}}></div>
                     {this.renderThoughtCard()}
-                    <button onClick={this.deleteHandler}>DELETE</button>
+                    <Button onClick={this.deleteHandler}>DELETE</Button>
                 </div>
                 <br/>
                 <br/>
-                <div>
+                <div style={{ width: "50%", float: "left" }}>
                     {this.props.lettersArray.length === 0 ? <h1>LOADING ...</h1> :
                         <>
+                            <Title>YOUR LETTERS</Title>
+
                             {this.renderLetterCards()}
-                            <button onClick={this.prevThought}>Previous</button>
-                            <button onClick={this.nextThought}>Next</button>
+                            
+                            <Button onClick={this.prevThought}>Previous</Button>
+                            <Button onClick={this.nextThought}>Next</Button>
                         </>
                     }
                 </div>
-            </div>
+            </Wrapper>
         )
     }
 }
+
+const Wrapper = styled.div`
+    height: 88.6%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    position: relative;
+`
+const Title = styled.h1`
+    font-size: 40px;
+    width: 100%;
+    font-weight: 600;
+    color: #FFC2E0;
+text-shadow: 0px 0px 2px #FFC2E0;
+`
+
+const Button = styled.button`
+position: relative;
+
+background-color: black;
+border: 0;
+padding: 10px 15px;
+color: #ffcb77;
+border-radius: 3px;
+width: 200px;
+cursor: pointer;
+font-size: 20px;
+font-weight: bold;
+transition-duration: 0.25s;
+margin-left: 16px;
+margin-right: 16px;
+}
+
+color: var(--color);
+    transition: 0.25s;
+    border-color: var(--hover);
+    color: #ffcb77;
+    --color: #ffcb77;
+    --hover: #ffcb77;
+    :hover,:focus {
+        border-color: #ffcb77;
+        -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+
+    @-webkit-keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+`
 
 function msp(state) {
     return ({
