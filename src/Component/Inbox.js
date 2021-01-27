@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Talk from 'talkjs';
+import styled from "styled-components";
 
 
 class Inbox extends Component {
@@ -47,14 +48,37 @@ class Inbox extends Component {
 
     render() {
         return (
-            <>
-                <div style={{ height: '500px' }} className="inbox-container" ref={c => this.container = c}>Loading...</div>
+            <Wrapper>
+                <Title> YOUR INBOX </Title>
+                <div style={{ height: '600px' }} className="inbox-container" ref={c => this.container = c}>Loading...</div>
                 {/* <div ref={this.talkjsContainer} className="chatbox-container"></div> */}
-            </>
+            </Wrapper>
         )
     }
 }
 
+const Wrapper = styled.div`
+    height: 88.6%;
+    width: 100%;
+
+    
+
+    position: relative;
+   
+    top: 5%;
+    margin: auto;
+`
+
+const Title = styled.h1`
+font-weight: 700;
+font-size: 50px;
+color: #FFCB77;
+text-align: center;
+text-shadow: 0px 0px 6px #FFCB77;
+margin-bottom: 20px;
+
+
+`
 
 
 function msp(state) {

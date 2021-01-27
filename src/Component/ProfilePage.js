@@ -32,6 +32,7 @@ class ProfilePage extends React.Component {
         var other = new Talk.User({
             id: user.id,
             name: user.name,
+            role: "Userx",
             email: user.email,
             photoUrl: user.avatar,
             welcomeMessage: "Hey!"
@@ -41,7 +42,13 @@ class ProfilePage extends React.Component {
         Talk.ready
             .then(() => {
                 /* Create the two users that will participate in the conversation */
-                const me = new Talk.User(currentUser);
+                const me = new Talk.User({
+                    id: currentUser.id,
+                    name: currentUser.name,
+                    role: "Userx",
+                    email: currentUser.email,
+                    photoUrl: currentUser.avatar,
+                });
                 // const other = new Talk.User(user)
 
                 /* Create a talk session if this does not exist. Remember to replace tthe APP ID with the one on your dashboard */
@@ -61,8 +68,8 @@ class ProfilePage extends React.Component {
                 conversation.setParticipant(other);
 
                 /* Create and mount chatbox in container */
-                this.chatbox = window.talkSession.createChatbox(conversation);
-                this.chatbox.mount(this.container);
+                const popup = window.talkSession.createPopup(conversation, { keepOpen: false });
+                popup.mount({ show: true });
             })
             .catch(e => console.error(e));
 
@@ -81,7 +88,7 @@ class ProfilePage extends React.Component {
                             <>
                                 <br /><br />
                                 <NavLink to="/inbox">
-                                <Button> INBOX </Button>
+                                    <Button> INBOX </Button>
 
                                 </NavLink>
                                 <NavLink to={{ pathname: "/edit", aboutProps: { user: userObj } }}>
@@ -106,8 +113,8 @@ class ProfilePage extends React.Component {
 
                     <div style={{ width: "70%", float: "left" }}>
                         <div className="parent">
-                        <MainHeader className="div1"> PERSONAL INFORMATION </MainHeader>
-                        <br /><br />
+                            <MainHeader className="div1"> PERSONAL INFORMATION </MainHeader>
+                            <br /><br />
                             <Header className="div2"> FULL NAME </Header>
                             <TextInfo className="div4">{userObj.name}</TextInfo>
 
@@ -122,9 +129,9 @@ class ProfilePage extends React.Component {
                     </div>
 
                 </Container>
-                    <div className="chatbox-container" ref={c => this.container = c}>
-                        <div id="talkjs-container" style={{ height: "500px"}}><i></i></div>
-                    </div>
+                <div className="chatbox-container" ref={c => this.container = c}>
+                    <div id="talkjs-container" style={{ height: "500px" }}><i></i></div>
+                </div>
             </Wrapper>
 
 
@@ -135,7 +142,6 @@ class ProfilePage extends React.Component {
 const Wrapper = styled.div`
     height: 88.6%;
     width: 100%;
-    
     margin: auto;
     position: center;
 `
