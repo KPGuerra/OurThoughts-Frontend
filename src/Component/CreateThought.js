@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { postAThought } from '../Redux/actions'
 import { withRouter } from 'react-router'
 import styled from "styled-components";
+import '../Styles/CreateThought.scss'
 
 class CreateThoughts extends React.Component {
 
@@ -45,10 +46,10 @@ class CreateThoughts extends React.Component {
         return (
             <Wrapper>
                 <ThoughtForm onSubmit={this.postHandler}>
+                    <div style={{ width: "70%", float: "left" }}>
                     <Title> What's on your mind? </Title>
                     <br /><br />
                     {/* <label>TITLE</label> */}
-                    <div style={{ width: "70%", float: "left" }}>
                         <Input style={{ width: "90%", textAlign: "center", fontWeight: "bold" }} type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.changeHandler} required />
 
                         {/* <label>CONTENT</label> */}
@@ -58,22 +59,26 @@ class CreateThoughts extends React.Component {
                     </div>
 
                     <div style={{ width: "30%", float: "left" }}>
-                        <Container>
-                            <ControlGroup>
-                                <h1 style={{ fontSize: "25px", fontWeight: "bold", color: "#25CED1" }} >CATEGORY</h1>
-                                <br />
-                                <Radio>
-                                    <input type="radio" id="positive" name="sentiment" value="Positive" onClick={this.state.sentiment === 'positive'} onChange={this.changeHandler} />
-                                    <label style={{ color: "#FFCB77" }} for="positive"> Positive</label><br></br>
-                                </Radio>
-                                <Radio>
-                                    <input type="radio" id="neutral" name="sentiment" value="Neutral" onClick={this.state.sentiment === 'neutral'} onChange={this.changeHandler} />
-                                    <label style={{ color: "#FFCB77" }} for="neutral"> Neutral</label><br></br>
-                                </Radio>
-                                <Radio>
-                                    <input type="radio" id="negative" name="sentiment" value="Negative" onClick={this.state.sentiment === 'negative'} onChange={this.changeHandler} />
-                                    <label style={{ color: "#FFCB77" }} for="negative"> Negative</label><br></br>
-                                </Radio>
+                        <Container >
+                            <ControlGroup className="container">
+                                <h1 style={{ fontSize: "25px", fontWeight: "bold", color: "#FFC2E0", textShadow: "0px 0px 2px #FFC2E0"}}>CATEGORY</h1>
+                                <ul>
+                                    <li>
+                                        <input type="radio" id="positive" name="sentiment" value="Positive" onClick={this.state.sentiment === 'Positive'} onChange={this.changeHandler} />
+                                        <label style={{ color: "#FFCB77" }} for="positive"> Positive</label>
+                                        <div class="check"></div>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="neutral" name="sentiment" value="Neutral" onClick={this.state.sentiment === 'Neutral'} onChange={this.changeHandler} />
+                                        <label style={{ color: "#FFCB77" }} for="neutral"> Neutral</label>
+                                        <div class="check"></div>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="negative" name="sentiment" value="Negative" onClick={this.state.sentiment === 'Negative'} onChange={this.changeHandler} />
+                                        <label style={{ color: "#FFCB77" }} for="negative"> Negative</label>
+                                        <div class="check"></div>
+                                    </li>
+                                </ul>
                             </ControlGroup>
                         </Container>
                         <br /> <br />
@@ -82,7 +87,7 @@ class CreateThoughts extends React.Component {
                         <Input type="text" name="emotion" placeholder="How do you feel?" value={this.state.emotion} onChange={this.changeHandler} required />
                         <br />
 
-                        <label style={{ fontSize: "25px", fontWeight: "bold", color: "Pink" }}>ADD TAGS</label>
+                        <label style={{ fontSize: "25px", fontWeight: "bold", color: "#FFC2E0", textShadow: "0px 0px 2px #FFC2E0" }}>ADD TAGS</label>
                         <br /><br />
                         <Input type="text" name="tags" placeholder="Tag 1" index="0" value={this.state.tags[0]} onChange={(e, index) => { this.tagsChangeHandler(e, 0) }} />
                         <Input type="text" name="tags" placeholder="Tag 2" index="1" value={this.state.tags[1]} onChange={(e, index) => { this.tagsChangeHandler(e, 1) }} />
@@ -91,7 +96,7 @@ class CreateThoughts extends React.Component {
                     </div>
                     <Button> POST </Button>
                 </ThoughtForm>
-            </Wrapper>
+            </Wrapper >
         )
     }
 }
@@ -107,22 +112,22 @@ const Wrapper = styled.div`
 const ThoughtForm = styled.form`
     position: relative;
     width: 100%;
-    top: 2%;
+    top: 1%;
     margin: auto;
     font-weight: 300;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
     background-color: transparent;
     border-radius: 5%;
     
 `
 
 const Title = styled.h1`
-    font-size: 60px;
-    width: 70%;
+    font-size: 50px;
+    width: 100%;
     font-weight: 600;
-    color: #ffc2e0;
-text-shadow: 0px 0px 6px #ffc2e0;
+    color: #FFC2E0;
+text-shadow: 0px 0px 6px #FFC2E0;
 `
 const Input = styled.input`
 -webkit-appearance: none;
@@ -213,7 +218,9 @@ margin-bottom: 2.5em;
 `
 
 const Container = styled.div`
-    width 100%;
+    margin-left: 115px;
+    width: 250px;
+
     height 100%;
     display flex;
     flex-wrap wrap;
@@ -224,12 +231,12 @@ const ControlGroup = styled.div`
 display: inline-block;
 vertical-align: top;
 background-color: rgba(0, 0, 0, 0.61);
-text-align: left;
-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-padding: 30px;
-width: 250px;
-height: 160px;
 
+box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+width: 100%;
+
+margin: 0;
 border-radius: 3px;
 color: white;
 `
@@ -240,6 +247,7 @@ position: relative;
 cursor: pointer;
 font-size: 18px;
 border-radius: 50%;
+
 `
 
 const Button = styled.button`

@@ -61,11 +61,11 @@ class ExploreThoughts extends React.Component {
                     <>
                         
                         {this.renderThoughtCards()}
-                        <button onClick={this.prevThought}>Previous</button>
+                        <Button onClick={this.prevThought}>Previous</Button>
                         <NavLink to={{pathname: "/write-letter", aboutProps: { thought: this.props.fiveThoughts[this.state.thoughtIndex]}}}>
-                            <button>Write A Letter</button>
+                            <Button>Write A Letter</Button>
                         </NavLink>
-                        <button onClick={this.nextThought}>Next</button>
+                        <Button onClick={this.nextThought}>Next</Button>
                     </>
                 }
             </Wrapper>
@@ -75,10 +75,52 @@ class ExploreThoughts extends React.Component {
 
 const Wrapper = styled.div`
     height: 88.6%;
-    width: 100%;
+    width: 50%;
     text-align: center;
     margin: auto;
     position: center;
+`
+const Button = styled.button`
+position: relative;
+top: 1%;
+background-color: black;
+border: 0;
+padding: 10px 15px;
+color: #ffcb77;
+border-radius: 3px;
+width: 200px;
+cursor: pointer;
+font-size: 20px;
+font-weight: bold;
+transition-duration: 0.25s;
+margin-left: 16px;
+margin-right: 16px;
+}
+
+color: var(--color);
+    transition: 0.25s;
+    border-color: var(--hover);
+    color: #ffcb77;
+    --color: #ffcb77;
+    --hover: #ffcb77;
+    :hover,:focus {
+        border-color: #ffcb77;
+        -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+
+    @-webkit-keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 var(--hover);
+        }
+    }
 `
 
 function msp(state) {

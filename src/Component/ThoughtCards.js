@@ -1,105 +1,141 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from "styled-components";
+import { Divider } from 'primereact/divider'
 import '../Styles/ThoughtCards.scss'
 
 class ThoughtCards extends React.Component {
 
     renderTags() {
-        return this.props.thoughtObj.tags.map(tag => <li>{tag}</li>)
+        return this.props.thoughtObj.tags.map(tag => <li style={{ textAlign: "left",listStyle: "inside", color: "whitesmoke", fontSize: "20px" }}>{tag}</li>)
     }
 
     render() {
         return (
-            <>
+            <Wrapper>
 
 
-                <h1>{this.props.thoughtObj.title}</h1>
-
-                <RandomThought>{this.props.thoughtObj.content}</RandomThought>
-
-
-
+                <Title>{this.props.thoughtObj.title}</Title>
                 <br />
-                <NavLink to={{ pathname: "/profile", aboutProps: { user: this.props.thoughtObj.user } }}>
-                    <p> - {this.props.thoughtObj.user.username}</p>
-                </NavLink>
-
-
-                <div>
+                <RandomThought>{this.props.thoughtObj.content}
 
 
 
-                    <h3> Sentiment: {this.props.thoughtObj.sentiment}</h3>
-                </div>
-
-                <div>
                     <br />
-                    <h3> {this.props.thoughtObj.emotion} </h3>
-                </div>
+                    <NavLink to={{ pathname: "/profile", aboutProps: { user: this.props.thoughtObj.user } }}>
+                        <ByTag> - {this.props.thoughtObj.user.username}</ByTag>
+                    </NavLink>
+                </RandomThought>
 
-                <div>
-                    <h4>Tags</h4>
-                    <ul>
-                        {this.renderTags()}
-                    </ul>
-                </div>
+
+                    <Sub>More Information</Sub>
+                <Container>
+                    <div style={{ width: "45%", float: "left", textAlign: "left", marginTop: "1px"}}>
+
+                        <Heading>  Sentiment: {this.props.thoughtObj.sentiment}</Heading>
+                        <br />
+                        <Heading> Emotion: {this.props.thoughtObj.emotion} </Heading>
+                    </div>
+                    <div style={{ width: "10%", float: "left" }}>
+                        <Divider style={{ color: "transparent" }}layout='vertical' />
+                    </div>
+                    <div style={{ width: "45%", float: "left" }}>
+                        <Heading style={{textAlign: "center", marginBottom: "2px"}}>Added Tags</Heading>
+                        <ul>
+                            {this.renderTags()}
+                        </ul>
+                    </div>
+                </Container>
                 <br />
 
-            </>
+            </Wrapper>
         )
     }
 }
 
-const RandomThought = styled.article`
-text-align: center;
-
-height: 200px;
-width: 50%;
-font-size: 16.5px;
-line-height: 2.5em;
-margin-bottom: 2.5em;
-box-shadow: 0 0 .5em rgba(0, 0, 0, 0.15);
-margin: 2em auto;
-padding: 1em 3em;
-position: relative;
-outline: 0;
-
-background: #08f;
-background: linear-gradient(top, #8cb , #bde 2%);
-background-size: 100% 45px;
-z-index: 0;
-
-        border-bottom-right-radius: 500px 1em;
-    border-bottom-left-radius: 20px 5em;
-    border-top-right-radius: .5em 2em;
-
+const Wrapper = styled.div`
+    height: auto;
+    width: auto;
+    text-align: center;
+    margin: auto;
     
+    margin-bottom: 100px;
+    position: relative;
+    top: 10%;
 
-    ::before {
-        background: #cef;
-        transform: rotate(4deg);
-        content: "";
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-    }
-
-    ::after {
-        background: #dff;
-        transform: rotate(-4deg);
-        content: "";
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-    }
 `
 
+const Title = styled.h1`
+    font-size: 40px;
+    width: 100%;
+    font-weight: 600;
+    color: #FFC2E0;
+text-shadow: 0px 0px 2px #FFC2E0;
+`
+
+const RandomThought = styled.article`
+text-align: left;
+border-radius: 5px;
+position: relative;
+width: 95%;
+
+margin: auto;
+margin-bottom: 40px;
+
+font-size: 16.5px;
+line-height: 2.5em;
+
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.15);
+    
+    padding: 1em 3em;
+    position: relative;
+    outline: 0;
+
+    background: #08f;
+    background: -webkit-linear-gradient(top, #8cb, #bde 2%);
+    background-size: 100% 45px;
+`
+const ByTag = styled.p`
+text-align:right;
+font-size: 20px;
+    width: 100%;
+    font-weight: 600;
+    color: #011627;
+text-shadow: 0px 0px 1px #011627;
+`
+const Container = styled.div`
+display: inline-flex;
+vertical-align: top;
+
+box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+background-color: rgba(0, 0, 0, 0.61);
+width: 95%;
+height: auto;
+margin: 0;
+border-radius: 3px;
+color: #6EFAFB;
+`
+const Heading = styled.h2`
+color: #6EFAFB;
+font-weight: bolder;
+font-size: 25px;
+text-shadow: 0px 0px 1px #6EFAFB;
+`
+const Sub = styled.h2`
+color: #FFC2E0;
+text-shadow: 0px 0px 2px #FFC2E0;
+font-weight: bolder;
+font-size: 25px;
+box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+background-color: rgba(0, 0, 0, 0.61);
+position: relative;
+width: 95%;
+
+margin: auto;
+padding-bottom: 10px; 
+border-bottom: dotted;
+`
 
 export default ThoughtCards
