@@ -74,22 +74,24 @@ class ExploreThoughts extends React.Component {
 }
 
 const Wrapper = styled.div`
-    height: 88.6%;
+    height: 100;
     width: 50%;
     text-align: center;
     margin: auto;
-    position: center;
+    position: relative;
+    top: 5%;
 `
 const Button = styled.button`
 position: relative;
 top: 1%;
-background-color: black;
+background-color: whitesmoke;
 border: 0;
 padding: 10px 15px;
-color: #ffcb77;
+color: #12263A;
 border-radius: 3px;
 width: 200px;
 cursor: pointer;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 font-size: 20px;
 font-weight: bold;
 transition-duration: 0.25s;
@@ -100,11 +102,11 @@ margin-right: 16px;
 color: var(--color);
     transition: 0.25s;
     border-color: var(--hover);
-    color: #ffcb77;
-    --color: #ffcb77;
-    --hover: #ffcb77;
+    color: #12263A;
+    --color: whitesmoke;
+    --hover: whitesmoke;
     :hover,:focus {
-        border-color: #ffcb77;
+        border-color: whitesmoke;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);

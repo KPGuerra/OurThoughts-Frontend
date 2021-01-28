@@ -80,13 +80,17 @@ class ProfilePage extends React.Component {
         return (
             <Wrapper>
                 <Container>
-                    <div style={{ width: "30%", float: "left", borderRight: "dotted", borderRightColor: "#FFCB77" }}>
+                    <div style={{ width: "30%", float: "left", borderRight: "dotted", borderRightColor: "whitesmoke" }}>
                         <Avatar src={userObj.avatar} />
                         <UserName>{userObj.username}</UserName>
 
                         {userObj.id === this.props.currentUser.id ?
                             <>
                                 <br /><br />
+
+                                <NavLink to="/past-thoughts">
+                                    <Button> MY THOUGHTS </Button>
+                                </NavLink>
                                 <NavLink to="/inbox">
                                     <Button> INBOX </Button>
 
@@ -95,10 +99,6 @@ class ProfilePage extends React.Component {
                                     <Button> EDIT MY ACCOUNT </Button>
                                 </NavLink>
                                 <Button onClick={this.deleteHandler}> DELETE MY ACCOUNT </Button>
-
-                                <NavLink to="/past-thoughts">
-                                    <Button> MY THOUGHTS </Button>
-                                </NavLink>
                             </>
                             :
                             <>
@@ -114,7 +114,7 @@ class ProfilePage extends React.Component {
                     <div style={{ width: "70%", float: "left" }}>
                         <div className="parent">
                             <MainHeader className="div1"> PERSONAL INFORMATION </MainHeader>
-                            <br /><br />
+                            
                             <Header className="div2"> FULL NAME </Header>
                             <TextInfo className="div4">{userObj.name}</TextInfo>
 
@@ -140,7 +140,7 @@ class ProfilePage extends React.Component {
 }
 
 const Wrapper = styled.div`
-    height: 88.6%;
+    height: 100%;
     width: 100%;
     margin: auto;
     position: center;
@@ -149,7 +149,7 @@ const Container = styled.div`
 text-align: center;
     position: relative;
     display: inline-flex;
-    top: 2%;
+    top: 10%;
     left: 3%;
     width: 94%;
     height 75%;
@@ -168,11 +168,11 @@ const UserName = styled.h1`
     font-size: 45px;
     width: 100%;
     font-weight: 600;
-    color: #FFC2E0;
-text-shadow: 0px 0px 2px #FFC2E0;
+    color: #F7AEF8;
+text-shadow: 0px 0px 2px #F7AEF8;
 `
 const Button = styled.button`
-    background:  #ffcb77;
+    background:  whitesmoke;
     border: 0px solid;
     border-color: #EF476F;
     width: 250px;
@@ -190,10 +190,10 @@ const Button = styled.button`
     transition: 0.25s;
     border-color: var(--hover);
     color: black;
-    --color: #ffcb77;
-    --hover: #ffcb77;
+    --color: whitesmoke;
+    --hover: whitesmoke;
     :hover,:focus {
-        border-color: #ffcb77;
+        border-color: whitesmoke;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
@@ -215,8 +215,9 @@ const MainHeader = styled.h1`
 font-size: 43px;
 width: 100%;
 font-weight: 600;
-color: #FFC2E0;
-text-shadow: 0px 0px 2px #FFC2E0;
+color: #F7AEF8;
+text-shadow: 0px 0px 2px #F7AEF8;
+margin-bottom: 50px;
 `
 const Header = styled.h2`
 

@@ -72,9 +72,9 @@ class App extends React.Component {
 
           </Switch>
         </>
-        <footer className="App-footer">
+        {/* <footer className="App-footer">
           <Footer />
-        </footer>
+        </footer> */}
       </>
     );
   }

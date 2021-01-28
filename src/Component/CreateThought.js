@@ -47,9 +47,9 @@ class CreateThoughts extends React.Component {
             <Wrapper>
                 <ThoughtForm onSubmit={this.postHandler}>
                     <div style={{ width: "70%", float: "left" }}>
-                    <Title> What's on your mind? </Title>
-                    <br /><br />
-                    {/* <label>TITLE</label> */}
+                        <Title> What's on your mind? </Title>
+                        <br /><br />
+                        {/* <label>TITLE</label> */}
                         <Input style={{ width: "90%", textAlign: "center", fontWeight: "bold" }} type="text" name="title" placeholder="Title" value={this.state.title} onChange={this.changeHandler} required />
 
                         {/* <label>CONTENT</label> */}
@@ -61,7 +61,7 @@ class CreateThoughts extends React.Component {
                     <div style={{ width: "30%", float: "left" }}>
                         <Container >
                             <ControlGroup className="container">
-                                <h1 style={{ fontSize: "25px", fontWeight: "bold", color: "#FFC2E0", textShadow: "0px 0px 2px #FFC2E0"}}>CATEGORY</h1>
+                                <h1 style={{ fontSize: "25px", fontWeight: "bold", color: "#F7AEf8", textShadow: "0px 0px 1px #FFC2E0" }}>SENTIMENT</h1>
                                 <ul>
                                     <li>
                                         <input type="radio" id="positive" name="sentiment" value="Positive" onClick={this.state.sentiment === 'Positive'} onChange={this.changeHandler} />
@@ -79,19 +79,17 @@ class CreateThoughts extends React.Component {
                                         <div class="check"></div>
                                     </li>
                                 </ul>
+                                <br />
                             </ControlGroup>
+                                <Input  type="text" name="emotion" placeholder="How do you feel?" value={this.state.emotion} onChange={this.changeHandler} required />
                         </Container>
-                        <br /> <br />
+
 
                         {/* <label>How do you feel?</label> */}
-                        <Input type="text" name="emotion" placeholder="How do you feel?" value={this.state.emotion} onChange={this.changeHandler} required />
-                        <br />
-
-                        <label style={{ fontSize: "25px", fontWeight: "bold", color: "#FFC2E0", textShadow: "0px 0px 2px #FFC2E0" }}>ADD TAGS</label>
-                        <br /><br />
-                        <Input type="text" name="tags" placeholder="Tag 1" index="0" value={this.state.tags[0]} onChange={(e, index) => { this.tagsChangeHandler(e, 0) }} />
-                        <Input type="text" name="tags" placeholder="Tag 2" index="1" value={this.state.tags[1]} onChange={(e, index) => { this.tagsChangeHandler(e, 1) }} />
-                        <Input type="text" name="tags" placeholder="Tag 3" index="2" value={this.state.tags[2]} onChange={(e, index) => { this.tagsChangeHandler(e, 2) }} />
+                        <br /> <br />
+                        <Input type="text" name="tags" placeholder="Add Custom Tag" index="0" value={this.state.tags[0]} onChange={(e, index) => { this.tagsChangeHandler(e, 0) }} />
+                        <Input type="text" name="tags" placeholder="Add Custom Tag" index="1" value={this.state.tags[1]} onChange={(e, index) => { this.tagsChangeHandler(e, 1) }} />
+                        <Input type="text" name="tags" placeholder="Add Custom Tag" index="2" value={this.state.tags[2]} onChange={(e, index) => { this.tagsChangeHandler(e, 2) }} />
                         <br /> <br />
                     </div>
                     <Button> POST </Button>
@@ -102,7 +100,7 @@ class CreateThoughts extends React.Component {
 }
 
 const Wrapper = styled.div`
-    height: 88.6%;
+    height: 100%;
     width: 100%;
     text-align: center;
     margin: auto;
@@ -112,7 +110,7 @@ const Wrapper = styled.div`
 const ThoughtForm = styled.form`
     position: relative;
     width: 100%;
-    top: 1%;
+    top: 5%;
     margin: auto;
     font-weight: 300;
     text-align: center;
@@ -126,8 +124,8 @@ const Title = styled.h1`
     font-size: 50px;
     width: 100%;
     font-weight: 600;
-    color: #FFC2E0;
-text-shadow: 0px 0px 6px #FFC2E0;
+    color: #F7AEf8;
+    text-shadow: 0px 0px 6px #F7AEf8;
 `
 const Input = styled.input`
 -webkit-appearance: none;
@@ -145,9 +143,9 @@ const Input = styled.input`
   font-size: 18px;
   transition-duration: 0.25s;
   font-weight: bold;
-  color: #011627;
+  color: #12263A;
   ::placeholder{
-      color: #011627;
+      color: #12263A;
   }
 :hover{
     background-color: rgba(255, 255, 255, 0.4);
@@ -156,7 +154,7 @@ const Input = styled.input`
 :focus{
     background-color: white;
   width: 300px;
-  color: black;
+  color: #12263A;
 }
 `
 const ThoughtText = styled.textarea`
@@ -218,9 +216,8 @@ margin-bottom: 2.5em;
 `
 
 const Container = styled.div`
-    margin-left: 115px;
+    margin: auto;
     width: 250px;
-
     height 100%;
     display flex;
     flex-wrap wrap;
@@ -252,10 +249,10 @@ border-radius: 50%;
 
 const Button = styled.button`
 
-background-color: black;
+background-color: whitesmoke;
 border: 0;
 padding: 10px 15px;
-color: #ffcb77;
+color: black;
 border-radius: 3px;
 width: 250px;
 cursor: pointer;
@@ -267,11 +264,11 @@ transition-duration: 0.25s;
 color: var(--color);
     transition: 0.25s;
     border-color: var(--hover);
-    color: #ffcb77;
-    --color: #ffcb77;
-    --hover: #ffcb77;
+    color: #12263A;
+    --color: #12263A;
+    --hover: white;
     :hover,:focus {
-        border-color: #ffcb77;
+        border-color: #12263A;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);

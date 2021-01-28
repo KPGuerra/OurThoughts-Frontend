@@ -48,19 +48,20 @@ class CreateThoughts extends React.Component {
 }
 
 const Wrapper = styled.div`
-    height: 88.6%;
+    height: 100%;
     width: 100%;
     text-align: center;
     margin: auto;
-    position: center;
+    position: relative;
+    top: 10%
 `
 
 const Title = styled.h1`
     font-size: 40px;
     width: 100%;
     font-weight: 600;
-    color: #FFC2E0;
-text-shadow: 0px 0px 2px #FFC2E0;
+    color: #F7AEF8;
+text-shadow: 0px 0px 2px #F7AEF8;
 margin-bottom: 0.5em;
 `
 
@@ -69,7 +70,7 @@ resize:none;
 
 text-align: left;
 overflow: hidden;
-height: 500px;
+height: 490px;
 width: 90%;
 font-size: 16.5px;
 line-height: 2.5em;
@@ -125,7 +126,7 @@ line-height: 2.5em;
 const Button = styled.button`
 position: relative;
 
-background-color: black;
+background-color: white;
 border: 0;
 padding: 10px 15px;
 color: #ffcb77;
@@ -142,11 +143,11 @@ margin-right: 16px;
 color: var(--color);
     transition: 0.25s;
     border-color: var(--hover);
-    color: #ffcb77;
-    --color: #ffcb77;
-    --hover: #ffcb77;
+    color: black;
+    --color: white;
+    --hover: white;
     :hover,:focus {
-        border-color: #ffcb77;
+        border-color: white;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);

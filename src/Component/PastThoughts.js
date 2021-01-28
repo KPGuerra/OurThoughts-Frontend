@@ -82,7 +82,7 @@ class PastThoughts extends React.Component {
 }
 
 const Wrapper = styled.div`
-    height: 88.6%;
+    height: 100%;
     width: 50%;
     text-align: center;
     margin: auto;
@@ -97,9 +97,9 @@ const Wrapper = styled.div`
 const Title = styled.h1`
 font-weight: 700;
 font-size: 50px;
-color: #25ced1;
+color: #93C9FF;
 text-align: center;
-text-shadow: 0px 0px 6px #25ced1;
+text-shadow: 0px 0px 4px #93C9FF;
 margin-bottom: 20px;
 
 `

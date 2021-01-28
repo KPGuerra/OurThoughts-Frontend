@@ -36,12 +36,12 @@
 
 .App-footer {
   height: 50px;
-  background: black;
+  background: #C8CBDB;
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #25ced1;
+  color: #F7AEF8;
   /* position: fixed; */
   left: 0;
   bottom: 0;
@@ -86,8 +86,8 @@ body,
   padding: 0;
   height: 100%;
   width: 100%;
-  background: radial-gradient(200% 100% at bottom center, #f7f7b6, #e96f92, #75517d, #1b2947);
-  background: radial-gradient(220% 105% at top center, #1b2947 10%, #75517d 40%, #e96f92 65%, #f7f7b6);
+  background: radial-gradient(200% 100% at bottom center, #FDC5F5, #F7AEF8, #8093F1, #1e4e8a);
+  background: radial-gradient(220% 105% at top center, #1e4e8a 10%, #8093F1 40%, #F7AEF8 65%, #FDC5F5);
   background-attachment: fixed;
   overflow: hidden;
   

@@ -66,9 +66,9 @@ const LoginForm = styled.form`
 const Title = styled.h1`
 font-weight: 700;
 font-size: 70px;
-color: #25ced1;
+color: #F7AEF8;
 text-align: center;
-text-shadow: 0px 0px 6px #25ced1;
+text-shadow: 0px 0px 6px #F7AEF8;
 
 `
 const Input = styled.input`
@@ -83,13 +83,13 @@ const Input = styled.input`
   padding: 10px 15px;
   margin: 0 auto 10px auto;
   display: block;
-  color: #ffc2e0;
+  color: #12263A;
   text-align: center;
   font-size: 18px;
   transition-duration: 0.25s;
   font-weight: 300;
   ::placeholder{
-      color: #ffc2e0;
+      color: #12263A;
   }
 :hover{
     background-color: rgba(255, 255, 255, 0.4);
@@ -104,7 +104,7 @@ const Input = styled.input`
 
 const Button = styled.button`
 
-background-color: #ffcb77;
+background-color: white;
 border: 0;
 padding: 10px 15px;
 color: black;
@@ -121,10 +121,10 @@ color: var(--color);
     transition: 0.25s;
     border-color: var(--hover);
     color: black;
-    --color: #ffcb77;
-    --hover: #ffcb77;
+    --color: white;
+    --hover: white;
     :hover,:focus {
-        border-color: #ffcb77;
+        border-color: white;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);

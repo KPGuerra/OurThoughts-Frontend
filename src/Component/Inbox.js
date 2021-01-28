@@ -58,7 +58,7 @@ class Inbox extends Component {
 }
 
 const Wrapper = styled.div`
-    height: 88.6%;
+    height: 100%;
     width: 100%;
 
     
@@ -72,9 +72,9 @@ const Wrapper = styled.div`
 const Title = styled.h1`
 font-weight: 700;
 font-size: 50px;
-color: #FFCB77;
+color: #F7AEF8;
 text-align: center;
-text-shadow: 0px 0px 6px #FFCB77;
+text-shadow: 0px 0px 6px #F7AEF8;
 margin-bottom: 20px;
 `
 

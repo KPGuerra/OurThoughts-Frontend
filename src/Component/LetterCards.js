@@ -37,6 +37,7 @@ text-align: left;
 border-radius: 5px;
 position: relative;
 width: 95%;
+height: 300px;
 
 margin: auto;
 margin-bottom: 40px;

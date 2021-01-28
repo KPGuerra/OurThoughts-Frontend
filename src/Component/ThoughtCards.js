@@ -30,7 +30,7 @@ class ThoughtCards extends React.Component {
 
                     <Sub>More Information</Sub>
                 <Container>
-                    <div style={{ width: "45%", float: "left", textAlign: "left", marginTop: "1px", marginLeft: "10px"}}>
+                    <div style={{ width: "45%", float: "left", textAlign: "left", marginTop: "1px", marginLeft: "10px", height: "105px"}}>
 
                         <Heading>  Sentiment: {this.props.thoughtObj.sentiment}</Heading>
                         <br />
@@ -61,14 +61,14 @@ const Wrapper = styled.div`
     
     margin-bottom: 100px;
     position: relative;
-    top: 10%;
+    top: 1%;
 `
 
 const Title = styled.h1`
     font-size: 40px;
     width: 100%;
     font-weight: 600;
-    color: #FFC2E0;
+    color: #F7AEF8;
 text-shadow: 0px 0px 2px #FFC2E0;
 `
 
@@ -77,6 +77,7 @@ text-align: left;
 border-radius: 5px;
 position: relative;
 width: 95%;
+height: 300px;
 
 margin: auto;
 margin-bottom: 40px;
@@ -116,13 +117,14 @@ border-radius: 3px;
 color: #6EFAFB;
 `
 const Heading = styled.h2`
-color: #6EFAFB;
+margin-top: 10px;
+color: rgb(255, 203, 119);
 font-weight: bolder;
-font-size: 25px;
+font-size: 20px;
 text-shadow: 0px 0px 1px #6EFAFB;
 `
 const Sub = styled.h2`
-color: #FFC2E0;
+color: #25CED1;
 text-shadow: 0px 0px 2px #FFC2E0;
 font-weight: bolder;
 font-size: 25px;

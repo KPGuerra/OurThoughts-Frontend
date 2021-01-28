@@ -113,8 +113,8 @@ const SignupForm = styled.form`
 const Title = styled.h1`
 font-weight: 700;
 font-size: 70px;
-color: #25ced1;
-text-shadow: 0px 0px 6px #25ced1;
+color: #F7AEF8;
+text-shadow: 0px 0px 6px #F7AEF8;
 
 `
 const Input = styled.input`
@@ -122,7 +122,7 @@ const Input = styled.input`
      -moz-appearance: none;
           appearance: none;
   outline: 0;
-  color: #ffc2e0;
+  color: #12263A;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
   width: 250px;
@@ -137,7 +137,7 @@ const Input = styled.input`
 
 
   ::placeholder{
-      color: #ffc2e0;
+      color: #12263A;
   }
 :hover{
     background-color: rgba(255, 255, 255, 0.4);
@@ -168,9 +168,9 @@ const InputBio = styled.textarea`
   transition-duration: 0.25s;
   font-weight: 300;
 
-  color: #ffc2e0;
+  color: #12263A;
   ::placeholder{
-      color: #ffc2e0;
+      color: #12263A;
   }
 :hover{
     background-color: rgba(255, 255, 255, 0.4);
@@ -184,7 +184,7 @@ const InputBio = styled.textarea`
 
 const Button = styled.button`
 
-background-color: #ffcb77;
+background-color: white;
 border: 0;
 padding: 10px 15px;
 color: black;
@@ -205,10 +205,10 @@ color: var(--color);
     border-color: var(--hover);
     color: black;
     
-    --color: #ffcb77;
-    --hover: #ffcb77;
+    --color: white;
+    --hover: white;
     :hover,:focus {
-        border-color: #ffcb77;
+        border-color: white;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
