@@ -84,10 +84,10 @@ const Wrapper = styled.div`
 const Button = styled.button`
 position: relative;
 top: 1%;
-background-color: whitesmoke;
+background-color: #A2D2FF;
 border: 0;
 padding: 10px 15px;
-color: #12263A;
+color: whitesmoke;
 border-radius: 3px;
 width: 200px;
 cursor: pointer;
@@ -102,7 +102,7 @@ margin-right: 16px;
 color: var(--color);
     transition: 0.25s;
     border-color: var(--hover);
-    color: #12263A;
+    color: black;
     --color: whitesmoke;
     --hover: whitesmoke;
     :hover,:focus {

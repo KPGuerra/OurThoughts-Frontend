@@ -118,14 +118,14 @@ color: #6EFAFB;
 `
 const Heading = styled.h2`
 margin-top: 10px;
-color: rgb(255, 203, 119);
+color: #FFAFCC;
 font-weight: bolder;
 font-size: 20px;
 text-shadow: 0px 0px 1px #6EFAFB;
 `
 const Sub = styled.h2`
 color: #25CED1;
-text-shadow: 0px 0px 2px #FFC2E0;
+text-shadow: 0px 0px 2px #25CED1
 font-weight: bolder;
 font-size: 25px;
 box-shadow: 0 1px 2px rgba(0,0,0,0.1);

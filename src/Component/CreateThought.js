@@ -58,7 +58,7 @@ class CreateThoughts extends React.Component {
                         <br /> <br />
                     </div>
 
-                    <div style={{ width: "30%", float: "left" }}>
+                    <div style={{ width: "30%", float: "left" , marginTop: "20px"}}>
                         <Container >
                             <ControlGroup className="container">
                                 <h1 style={{ fontSize: "25px", fontWeight: "bold", color: "#F7AEf8", textShadow: "0px 0px 1px #FFC2E0" }}>SENTIMENT</h1>

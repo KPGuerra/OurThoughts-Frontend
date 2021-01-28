@@ -86,8 +86,8 @@ body,
   padding: 0;
   height: 100%;
   width: 100%;
-  background: radial-gradient(200% 100% at bottom center, #FDC5F5, #F7AEF8, #8093F1, #1e4e8a);
-  background: radial-gradient(220% 105% at top center, #1e4e8a 10%, #8093F1 40%, #F7AEF8 65%, #FDC5F5);
+  background: radial-gradient(200% 100% at bottom center, #EFF7F6, #F7AEF8, #405198, #023177);
+  /* background: radial-gradient(220% 105% at top center, #023177 10%, #405198 40%, #F7AEF8 65%, #EFF7F6); */
   background-attachment: fixed;
   overflow: hidden;
   
