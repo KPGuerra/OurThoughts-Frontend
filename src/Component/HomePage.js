@@ -37,9 +37,13 @@ class HomePage extends React.Component {
                                 {/* <About> Take time for yourself.</About> */}
                             </>
 
-                            : <Title className="glow" > Our Thoughts </Title>}
+                            : 
+                            <>
+                            <Title className="glow" > Our Thoughts </Title>
+                            <About>  🌤 Good Morning! Let's have a good day! 🌤 </About>
+                            </>
+                            }
                         <br />
-                        <About>  🌤 Good Morning! Let's have a good day! 🌤 </About>
 
                         {/* <About> Taking care of yourself is the best way to take care of others.</About> */}
                         <br /><br />
