@@ -141,7 +141,7 @@ const SubContainer = styled.div`
     margin: 0;
     color: #12263A;
 
-    font-weight: 300;
+  
 `
 
 const Title = styled.h1`
@@ -150,14 +150,16 @@ const Title = styled.h1`
     color: #F7AEF8;
     text-align: center;
     text-shadow: 0px 0px 4px #F7AEF8;
+    font-family: Open Sans;
 
 `
 const About = styled.p`
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 200;
     margin: 20px;
     align-self: start;
     color: #93c9ff;
+    font-family: Noto Sans JP;
 
 `
 
@@ -167,8 +169,9 @@ const Button = styled.button`
     border: 0px solid;
     border-color: #EF476F;
     width: 250px;
-    font-weight: bolder;
-    font: inherit;
+    font-weight: 400;
+    font-family: Noto Sans JP;
+    font-size: 18px;
     line-height: 1;
     padding: 10px;
     border-radius: 3px;
