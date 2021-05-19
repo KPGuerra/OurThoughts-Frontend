@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import '../Styles/HomePage.scss'
-// import 'primeflex/primeflex.css';
+import { Row, Col } from 'react-bootstrap'
 import styled from "styled-components";
 import { Divider } from 'primereact/divider'
 
@@ -29,39 +29,49 @@ class HomePage extends React.Component {
             <Wrapper>
                 {this.props.currentUser ? (
                     <Container>
+
                         {this.TimeCheck() === "pm" ?
                             <>
-                                <Title className="glow" >Our Thoughts </Title>
+                                <Row>
+                                    <Title className="glow" >Our Thoughts </Title>
+
+                                </Row>
                                 <br />
-                                <About> 🌕 Good Afternoon! Tomorrow is a new day 🌕 </About>
+                                <Row>
+
+                                    <About> 🌕 Good Afternoon! Tomorrow is a new day 🌕 </About>
+                                </Row>
                                 {/* <About> Take time for yourself.</About> */}
                             </>
 
-                            : 
+                            :
                             <>
-                            <Title className="glow" > Our Thoughts </Title>
-                            <About>  🌤 Good Morning! Let's have a good day! 🌤 </About>
-                            </>
-                            }
-                        <br />
+                                <Row>
+                                    <Title className="glow" > Our Thoughts </Title>
 
-                        {/* <About> Taking care of yourself is the best way to take care of others.</About> */}
-                        <br /><br />
+                                </Row>
+                                <Row>
+                                    <About>  🌤 Good Morning! Let's have a good day! 🌤 </About>
+                                </Row>
+                            </>
+                        }
+                        <br /><br /><br />
 
                         <SubContainer>
+
                             <div style={{ width: "45%", float: "left" }}>
-                                <p style={{fontSize: "26px", textAlign: "left"}}> Need to vent? Want to celebrate a personal achievement? Share with others!</p>
-                                <br/>
+                                <p style={{ fontSize: "26px", textAlign: "left" }}> Need to vent? Want to celebrate a personal achievement? Share with others!</p>
+                                <br />
                                 <NavLink to="/my-thought">
                                     <Button>SHARE YOUR THOUGHTS</Button>
                                 </NavLink>
                             </div>
                             <div style={{ width: "10%", float: "left" }}>
-                                <Divider style={{color: "white"}} layout="vertical" />
+                                <Divider style={{ color: "white" }} layout="vertical" />
                             </div>
                             <div style={{ width: "45%", float: "left" }}>
-                                <p style={{fontSize: "26px", textAlign: "left"}}> Checkout other people's thoughts. Write someone a letter and make their day! </p>
-                                <br/>
+                                <p style={{ fontSize: "26px", textAlign: "left" }}> Checkout other people's thoughts. Write someone a letter and make their day! </p>
+                                <br />
                                 <NavLink to="/explore-thoughts">
                                     <Button>BROWSE OTHER THOUGHTS</Button>
                                 </NavLink>
@@ -72,17 +82,32 @@ class HomePage extends React.Component {
                 ) :
 
                     <Container>
-                        <Title> OUR THOUGHTS </Title>
+                        <Row>
+
+                            <Title> OUR THOUGHTS </Title>
+                        </Row>
                         <br /><br />
-                        {/* <About> A safe place to share your thoughts.</About> */}
-                        <About style={{ color: "#12263A"}}> Spread kindness & receive it. </About>
+                        
+                        <Row>
+                            <About style={{ color: "#12263A" }}> Spread kindness & receive it. </About>
+                        </Row>
                         <br /> <br /><br />
-                        <NavLink to="/login">
-                            <Button style={{marginLeft: "50px", marginRight: "50px"}}> LOG IN </Button>
-                        </NavLink>
-                        <NavLink to="/signup">
-                            <Button> SIGN UP </Button>
-                        </NavLink>
+                        <Row className="ButtonContainer">
+                            <Col className="ButtonCol">
+                                <NavLink to="/login">
+                                    <Button > LOG IN </Button>
+                                </NavLink>
+                            </Col>
+
+                            <Col className="ButtonCol">
+                                <NavLink to="/signup">
+                                    <Button> SIGN UP </Button>
+                                </NavLink>
+                            </Col>
+
+                        </Row>
+
+                      
                     </Container>
                 }
             </Wrapper>
@@ -109,14 +134,14 @@ const Container = styled.div`
     transform: translate(-50%, -50%);
 `
 const SubContainer = styled.div`
-display: inline-flex;
-vertical-align: top;
-width: 55%;
-height: auto;
-margin: 0;
-color: #12263A;
+    display: inline-flex;
+    vertical-align: top;
+    width: 55%;
+    height: auto;
+    margin: 0;
+    color: #12263A;
 
-font-weight: 300;
+    font-weight: 300;
 `
 
 const Title = styled.h1`
@@ -141,13 +166,14 @@ const Button = styled.button`
     background:  white;
     border: 0px solid;
     border-color: #EF476F;
-    width: 300px;
+    width: 250px;
     font-weight: bolder;
     font: inherit;
     line-height: 1;
     padding: 10px;
     border-radius: 3px;
     font-weight: bolder;
+    margin: 10px;
    
     color: var(--color);
     transition: 0.25s;
