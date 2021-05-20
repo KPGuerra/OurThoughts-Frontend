@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setUser } from '../Redux/actions'
-import { InputText } from 'primereact/inputtext';
 import { withRouter } from 'react-router'
 import '../Styles/Login.scss'
 import styled from "styled-components";
@@ -35,7 +34,7 @@ class Login extends React.Component {
                     {/* <label htmlFor="password">PASSWORD</label> */}
                     <Input className="input" placeholder="Password" type="password" name="password" value={this.state.password} onChange={this.changeHandler} required />
                     <br /> <br />
-                    <Button className="button"> LOG IN </Button>
+                    <Button> LOG IN </Button>
                 </LoginForm>
             </Wrapper>
         )
@@ -69,6 +68,7 @@ font-size: 70px;
 color: #F7AEF8;
 text-align: center;
 text-shadow: 0px 0px 6px #F7AEF8;
+font-family: Open Sans;
 
 `
 const Input = styled.input`
@@ -86,6 +86,7 @@ const Input = styled.input`
   color: #12263A;
   text-align: center;
   font-size: 18px;
+  font-family: Noto Sans JP;
   transition-duration: 0.25s;
   font-weight: 300;
   ::placeholder{
@@ -103,28 +104,28 @@ const Input = styled.input`
 `
 
 const Button = styled.button`
-
-background-color: white;
-border: 0;
-padding: 10px 15px;
-color: black;
-border-radius: 3px;
-width: 250px;
-cursor: pointer;
-font-size: 18px;
-transition-duration: 0.25s;
-font-weight: bold;
-
-}
-
-color: var(--color);
+    margin-top: 20px;
+    background:  white;
+    border: 0px solid;
+    border-color: #EF476F;
+    width: 250px;
+    
+    font-family: Noto Sans JP;
+    font-size: 18px;
+    line-height: 1;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bolder;
+    margin: 10px;
+   
+    color: var(--color);
     transition: 0.25s;
     border-color: var(--hover);
     color: black;
     --color: white;
     --hover: white;
     :hover,:focus {
-        border-color: white;
+        border-color: #93c9ff;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);

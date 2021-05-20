@@ -115,6 +115,7 @@ font-weight: 700;
 font-size: 70px;
 color: #F7AEF8;
 text-shadow: 0px 0px 6px #F7AEF8;
+font-family: Open Sans;
 
 `
 const Input = styled.input`
@@ -134,6 +135,7 @@ const Input = styled.input`
   font-size: 18px;
   transition-duration: 0.25s;
   font-weight: 300;
+  font-family: Noto Sans JP;
 
 
   ::placeholder{
@@ -183,32 +185,28 @@ const InputBio = styled.textarea`
 `
 
 const Button = styled.button`
-
-background-color: white;
-border: 0;
-padding: 10px 15px;
-color: black;
-border-radius: 3px;
-width: 250px;
-text-align: center;
-cursor: pointer;
-font-size: 18px;
-font-weight: bold;
-transition-duration: 0.25s;
-margin-right: 170px;
-margin-top: 20px;
-
-}
-
-color: var(--color);
+    margin-top: 20px;
+    background:  white;
+    border: 0px solid;
+    border-color: #EF476F;
+    width: 250px;
+    
+    font-family: Noto Sans JP;
+    font-size: 18px;
+    line-height: 1;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bolder;
+    margin: 10px;
+   
+    color: var(--color);
     transition: 0.25s;
     border-color: var(--hover);
     color: black;
-    
     --color: white;
     --hover: white;
     :hover,:focus {
-        border-color: white;
+        border-color: #93c9ff;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
@@ -226,7 +224,6 @@ color: var(--color);
         }
     }
 `
-
 
 function mdp(dispatch) {
     return {

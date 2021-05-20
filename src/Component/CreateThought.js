@@ -61,7 +61,7 @@ class CreateThoughts extends React.Component {
                     <div style={{ width: "30%", float: "left" , marginTop: "20px"}}>
                         <Container >
                             <ControlGroup className="container">
-                                <h1 style={{ fontSize: "25px", fontWeight: "bold", color: "#F7AEf8", textShadow: "0px 0px 1px #FFC2E0" }}>SENTIMENT</h1>
+                                <h1 style={{ fontSize: "25px", fontFamily:"Open Sans", fontWeight: "bold", color: "#F7AEf8", textShadow: "0px 0px 1px #FFC2E0" }}>SENTIMENT</h1>
                                 <ul>
                                     <li>
                                         <input type="radio" id="positive" name="sentiment" value="Positive" onClick={this.state.sentiment === 'Positive'} onChange={this.changeHandler} />
@@ -126,6 +126,7 @@ const Title = styled.h1`
     font-weight: 600;
     color: #F7AEf8;
     text-shadow: 0px 0px 6px #F7AEf8;
+    font-family: Open Sans;
 `
 const Input = styled.input`
 -webkit-appearance: none;
@@ -141,6 +142,7 @@ const Input = styled.input`
   display: block;
   text-align: center;
   font-size: 18px;
+  font-family: Noto Sans JP;
   transition-duration: 0.25s;
   font-weight: bold;
   color: #12263A;
@@ -159,7 +161,7 @@ const Input = styled.input`
 `
 const ThoughtText = styled.textarea`
 resize:none;
-
+font-family: Noto Sans JP;
 text-align: left;
 overflow: hidden;
 height: 500px;
@@ -258,6 +260,7 @@ width: 250px;
 cursor: pointer;
 font-size: 20px;
 font-weight: bold;
+font-family: Open Sans;
 transition-duration: 0.25s;
 }
 

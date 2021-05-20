@@ -33,7 +33,7 @@ class HomePage extends React.Component {
                         {this.TimeCheck() === "pm" ?
                             <>
                                 <Row>
-                                    <Title className="glow" >Our Thoughts </Title>
+                                    <Title className="glow" > OUR THOUGHTS </Title>
 
                                 </Row>
                                 <br />
@@ -59,23 +59,23 @@ class HomePage extends React.Component {
 
                         <SubContainer>
 
-                            <div style={{ width: "45%", float: "left" }}>
-                                <p style={{ fontSize: "26px", textAlign: "left" }}> Need to vent? Want to celebrate a personal achievement? Share with others!</p>
+                            <Col>
+                                <p style={{ fontFamily: "Noto Sans JP" ,fontSize: "22px", textAlign: "left" }}> Need to vent? Want to celebrate a personal achievement? Share with others!</p>
                                 <br />
                                 <NavLink to="/my-thought">
                                     <Button>SHARE YOUR THOUGHTS</Button>
                                 </NavLink>
-                            </div>
-                            <div style={{ width: "10%", float: "left" }}>
+                            </Col>
+                            <div>
                                 <Divider style={{ color: "white" }} layout="vertical" />
                             </div>
-                            <div style={{ width: "45%", float: "left" }}>
-                                <p style={{ fontSize: "26px", textAlign: "left" }}> Checkout other people's thoughts. Write someone a letter and make their day! </p>
+                            <Col>
+                                <p style={{ fontFamily: "Noto Sans JP", fontSize: "22px", textAlign: "left" }}> Checkout other people's thoughts. Write someone a letter and make their day! </p>
                                 <br />
                                 <NavLink to="/explore-thoughts">
                                     <Button>BROWSE OTHER THOUGHTS</Button>
                                 </NavLink>
-                            </div>
+                            </Col>
                         </SubContainer>
 
                     </Container>
@@ -151,6 +151,7 @@ const Title = styled.h1`
     text-align: center;
     text-shadow: 0px 0px 4px #F7AEF8;
     font-family: Open Sans;
+    text-transform: uppercase;
 
 `
 const About = styled.p`
@@ -164,19 +165,19 @@ const About = styled.p`
 `
 
 const Button = styled.button`
-    margin-top: 20px;
+    
     background:  white;
     border: 0px solid;
     border-color: #EF476F;
-    width: 250px;
-    font-weight: 400;
+    width: 300px;
+    
     font-family: Noto Sans JP;
     font-size: 18px;
     line-height: 1;
     padding: 10px;
     border-radius: 3px;
-    font-weight: bolder;
-    margin: 10px;
+    font-weight: 500;
+    margin: 20px;
    
     color: var(--color);
     transition: 0.25s;
