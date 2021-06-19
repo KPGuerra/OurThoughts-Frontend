@@ -44,6 +44,7 @@ class CreateThoughts extends React.Component {
 
     render() {
         return (
+            <div className="create-thought-container">
             <Wrapper>
                 <ThoughtForm onSubmit={this.postHandler}>
                     <div style={{ width: "70%", float: "left" }}>
@@ -95,6 +96,7 @@ class CreateThoughts extends React.Component {
                     <Button> POST </Button>
                 </ThoughtForm>
             </Wrapper >
+            </div>
         )
     }
 }
