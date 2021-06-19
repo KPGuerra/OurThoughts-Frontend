@@ -113,6 +113,8 @@ color: #25CED1;
 text-align: center;
 text-shadow: 0px 0px 4px #25CED1;
 margin-bottom: 20px;
+font-family: Open Sans;
+
 `
 const Topic = styled.h2`
 font-weight: 600;
@@ -121,6 +123,8 @@ color: #25CED1;
 text-align: center;
 text-shadow: 0px 0px 2px #25CED1;
 margin-bottom: 20px;
+font-family: Open Sans;
+
 `
 
 const SmallerHeading = styled.h3`
@@ -130,9 +134,12 @@ color: #9396F0;
 text-align: center;
 text-shadow: 0px 0px 1px #9396F0;
 margin-bottom: 20px;
+font-family: Open Sans;
+
 `
 
 const Description = styled.p`
+font-family: Noto Sans JP;
     font-size: 30px;
     font-weight: 300;
     color: #ffc2e0;
@@ -150,6 +157,7 @@ const Block = styled.p`
         list-style: none;
         font-size: 27px;
         color: #FCFCFC;
+        font-family: Noto Sans JP;
     }
 
     a {
