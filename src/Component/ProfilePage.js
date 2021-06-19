@@ -170,30 +170,34 @@ const UserName = styled.h1`
     font-weight: 600;
     color: #F7AEF8;
 text-shadow: 0px 0px 2px #F7AEF8;
+font-family: Open Sans;
 `
 const Button = styled.button`
     background:  whitesmoke;
     border: 0px solid;
     border-color: #EF476F;
     width: 250px;
-    font-weight: bolder;
-    font: inherit;
+    
     line-height: 1;
     margin-bottom: 10px;
     margin-left: 50px;
     margin-right: 50px;
     padding: 10px;
     border-radius: 3px;
-    font-weight: bolder;
-   
-    color: var(--color);
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Open Sans;
+    transition-duration: 0.25s;
+}
+
+color: var(--color);
     transition: 0.25s;
     border-color: var(--hover);
-    color: black;
-    --color: whitesmoke;
-    --hover: whitesmoke;
+    color: #12263A;
+    --color: #12263A;
+    --hover: white;
     :hover,:focus {
-        border-color: whitesmoke;
+        border-color: #12263A;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
@@ -218,6 +222,7 @@ font-weight: 600;
 color: #F7AEF8;
 text-shadow: 0px 0px 2px #F7AEF8;
 margin-bottom: 50px;
+font-family: Open Sans;
 `
 const Header = styled.h2`
 
@@ -227,6 +232,7 @@ font-weight: 600;
 color: #6EFAFB;
 text-shadow: 0px 0px 2px #6EFAFB;
 margin-top: 0px;
+font-family: Open Sans;
 `
 const TextInfo = styled.h2`
 
@@ -234,10 +240,11 @@ font-size: 30px;
 width: 100%;
 font-weight: 300;
 color: #FFFF;
+font-family: Noto Sans JP;
 `
 const BioInfo = styled.p`
 text-align: left;
-
+font-family: Noto Sans JP;
 font-size: 23px;
 width: 90%;
 font-weight: 300;
