@@ -119,7 +119,6 @@ const ThoughtForm = styled.form`
     padding: 5px;
     background-color: transparent;
     border-radius: 5%;
-    
 `
 
 const Title = styled.h1`

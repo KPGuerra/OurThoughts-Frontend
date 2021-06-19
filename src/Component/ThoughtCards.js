@@ -41,9 +41,9 @@ class ThoughtCards extends React.Component {
                     </div>
                     <div style={{ width: "45%", float: "left" }}>
                         <Heading style={{textAlign: "center", marginBottom: "2px"}}>Added Tags</Heading>
-                        <ul>
+                        <BulletTags>
                             {this.renderTags()}
-                        </ul>
+                        </BulletTags>
                     </div>
                 </Container>
                 <br />
@@ -65,9 +65,11 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h1`
-    font-size: 40px;
+font-size: 50px;
+font-weight: bold;
+font-family: Open Sans;
     width: 100%;
-    font-weight: 600;
+    
     color: #F7AEF8;
 text-shadow: 0px 0px 2px #FFC2E0;
 `
@@ -78,7 +80,7 @@ border-radius: 5px;
 position: relative;
 width: 95%;
 height: 300px;
-
+font-family: Noto Sans JP;
 margin: auto;
 margin-bottom: 40px;
 
@@ -102,6 +104,7 @@ font-size: 20px;
     font-weight: 600;
     color: #011627;
 text-shadow: 0px 0px 1px #011627;
+font-family: Noto Sans JP;
 `
 const Container = styled.div`
 display: inline-flex;
@@ -122,6 +125,7 @@ color: #FFAFCC;
 font-weight: bolder;
 font-size: 20px;
 text-shadow: 0px 0px 1px #6EFAFB;
+font-family: Open Sans;
 `
 const Sub = styled.h2`
 color: #25CED1;
@@ -129,6 +133,7 @@ text-shadow: 0px 0px 2px #25CED1
 font-weight: bolder;
 font-size: 25px;
 box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+font-family: Open Sans;
 
 background-color: rgba(0, 0, 0, 0.61);
 position: relative;
@@ -137,6 +142,9 @@ width: 95%;
 margin: auto;
 padding-bottom: 10px; 
 border-bottom: dotted;
+`
+const BulletTags = styled.ul`
+font-family: Open Sans;
 `
 
 export default ThoughtCards

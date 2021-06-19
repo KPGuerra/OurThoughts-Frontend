@@ -82,31 +82,28 @@ const Wrapper = styled.div`
     top: 5%;
 `
 const Button = styled.button`
-position: relative;
-top: 1%;
-background-color: #A2D2FF;
-border: 0;
-padding: 10px 15px;
-color: whitesmoke;
-border-radius: 3px;
-width: 200px;
-cursor: pointer;
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-font-size: 20px;
-font-weight: bold;
-transition-duration: 0.25s;
-margin-left: 16px;
-margin-right: 16px;
-}
-
-color: var(--color);
+    
+    background:  white;
+    border: 0px solid;
+    border-color: #EF476F;
+    width: 180px;
+    
+    font-family: Noto Sans JP;
+    font-size: 18px;
+    line-height: 1;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: 500;
+    margin: 20px;
+   
+    color: var(--color);
     transition: 0.25s;
     border-color: var(--hover);
     color: black;
-    --color: whitesmoke;
-    --hover: whitesmoke;
+    --color: white;
+    --hover: white;
     :hover,:focus {
-        border-color: whitesmoke;
+        border-color: #93c9ff;
         -webkit-animation: pulse 1s;
           animation: pulse 1s;
         box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
